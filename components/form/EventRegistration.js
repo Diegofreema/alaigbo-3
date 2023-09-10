@@ -75,7 +75,7 @@ const EventRegistration = ({ id }) => {
         values.prefix,
         values.location,
         values.participants,
-        ID
+        ID.toString()
       );
       toast({
         variant: 'success',

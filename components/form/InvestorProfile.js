@@ -50,8 +50,9 @@ const InvestorProfile = () => {
         values.investmentPreference,
         values.investmentExperience,
         values.accreditation,
-        user?.id
+        user?.id.toString()
       );
+      console.log('sub,it');
       toast({
         variant: 'success',
         title: 'Successful',
