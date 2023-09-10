@@ -17,7 +17,7 @@ const EventOnboard = async () => {
   console.log(isCompany?.isOnboarded, isMember?.isOnboarded);
   if (!isCompany?.isOnboarded && !isMember?.isOnboarded)
     redirect('/accountType');
-  const currentId = isMember?.userId.toString();
+
   return (
     <div className="min-h-screen py-[150px] w-[95%] md:w-[85%] mx-auto">
       <h1 className="text-2xl md:text-4xl capitalize font-bold text-center">

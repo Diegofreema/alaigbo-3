@@ -14,13 +14,12 @@ import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 import { investorValidation } from '@/lib/validations/user';
 import { Textarea } from '@/components/ui/textarea';
-import { X } from 'lucide-react';
 import FileUpload from '../FileUpload';
 import { createInvestor } from '@/lib/actions/user.actions';
 import { useToast } from '@/components/ui/use-toast';
-import { ToastAction } from '@/components/ui/toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
+import axios from 'axios';
 const InvestorProfile = () => {
   const { user } = useUser();
   const { toast } = useToast();
@@ -38,28 +37,33 @@ const InvestorProfile = () => {
       accreditation: '',
     },
   });
-  const onInvalid = (errors) => console.error(errors);
+  const onInvalid = (errors) => console.log(errors);
   const onSubmit = async (values) => {
     try {
-      await createInvestor(
-        values.companyName,
-        values.number,
-        values.representativeName,
-        values.email,
-        values.industry,
-        values.investmentPreference,
-        values.investmentExperience,
-        values.accreditation,
-        user?.id.toString()
-      );
+      const response = await axios.post('/api/createInvestor', values);
+      // await createInvestor(
+      //   values.companyName,
+      //   values.number,
+      //   values.representativeName,
+      //   values.email,
+      //   values.industry,
+      //   values.investmentPreference,
+      //   values.investmentExperience,
+      //   values.accreditation,
+      //   user?.id.toString()
+      // );
+      // console.log(values.accreditation);
+      console.log(response);
       console.log('sub,it');
       toast({
         variant: 'success',
         title: 'Successful',
-        description: 'You have created an account',
+        description: 'You have created an account ',
       });
-      // form.reset();
-      // router.push('/');
+      if (response.status === '200') {
+        form.reset();
+        router.push('/');
+      }
     } catch (error) {
       console.log(error);
       toast({

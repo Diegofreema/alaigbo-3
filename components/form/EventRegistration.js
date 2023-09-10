@@ -29,19 +29,21 @@ import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import { countries } from '@/utils/file';
-const EventRegistration = ({ id }) => {
-  const [ID, setID] = useState('');
+import { ScrollArea } from '../ui/scroll-area';
+const EventRegistration = () => {
+  const [currentUserId, setCurrentUserId] = useState('');
   const { user } = useUser();
   const { toast } = useToast();
   const router = useRouter();
   useEffect(() => {
     const getUser = async () => {
-      const isMember = await fetchUserMember(id);
-      setID(isMember?._id);
+      const isMember = await fetchUserMember(user.id);
+      setCurrentUserId(isMember?._id);
     };
 
     getUser();
   }, []);
+
   const form = useForm({
     resolver: zodResolver(bookingValidation),
     defaultValues: {
@@ -75,7 +77,7 @@ const EventRegistration = ({ id }) => {
         values.prefix,
         values.location,
         values.participants,
-        ID.toString()
+        user?.id
       );
       toast({
         variant: 'success',
@@ -83,7 +85,7 @@ const EventRegistration = ({ id }) => {
         description: 'You have Booked this event',
       });
       form.reset();
-      router.push('/');
+      // router.push('/');
     } catch (error) {
       console.log(error);
       toast({
@@ -104,7 +106,7 @@ const EventRegistration = ({ id }) => {
           onSubmit={form.handleSubmit(onSubmit, onInvalid)}
           className="space-y-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <FormField
               control={form.control}
               name="prefix"
@@ -156,6 +158,8 @@ const EventRegistration = ({ id }) => {
                 </FormItem>
               )}
             />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-x-3">
             <FormField
               control={form.control}
               name="middleName"
@@ -195,7 +199,6 @@ const EventRegistration = ({ id }) => {
               )}
             />
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-x-3">
             <FormField
               control={form.control}
@@ -242,6 +245,7 @@ const EventRegistration = ({ id }) => {
               name="location"
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel>Location</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}

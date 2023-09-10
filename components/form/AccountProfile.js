@@ -1,7 +1,6 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -21,22 +20,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { v4 as uuidv4 } from 'uuid';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import { DatePickerInput } from '@mantine/dates';
-import { Calendar } from '@/components/ui/calendar';
-import { CalendarIcon, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { states } from '@/utils/file';
 import FileUpload from '../FileUpload';
 import { createMember } from '@/lib/actions/user.actions';
 import { useToast } from '@/components/ui/use-toast';
-import { ToastAction } from '@/components/ui/toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { departments } from '@/utils/file';
@@ -57,8 +46,8 @@ const AccountProfile = () => {
       middleName: '',
       email: user?.emailAddresses[0]?.emailAddress || '',
       number: '',
-      state: 'Imo',
-      lga: '',
+      state: 'Imo State',
+      lga: 'Owerri North',
       town: '',
       placeOfBirth: '',
       village: '',

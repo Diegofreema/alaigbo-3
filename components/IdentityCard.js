@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/card';
 import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
-import { format } from 'date-fns';
 
 const IdentityCard = ({
   memberId,
@@ -18,11 +17,6 @@ const IdentityCard = ({
   middleName,
   state,
   lga,
-  town,
-  placeOfBirth,
-  village,
-  familyName,
-  gender,
   dob,
 }) => {
   return (
