@@ -35,7 +35,10 @@ const MemberPage = async () => {
   return (
     <div className="min-h-[100vh] w-full pb-10 relative grid grid-cols-12 place-content-center  ">
       <div className="hidden lg:!flex col-span-3">
-        <MemberSidebar imgUrl={member?.imgUrl} />
+        <MemberSidebar
+          imgUrl={member?.imgUrl}
+          department={member?.department}
+        />
       </div>
 
       <div className=" lg:col-span-9 col-span-12">

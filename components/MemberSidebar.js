@@ -4,7 +4,7 @@ import { ScrollArea } from './ui/scroll-area';
 import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
 
-const MemberSidebar = ({ imgUrl }) => {
+const MemberSidebar = ({ imgUrl, department }) => {
   return (
     <ScrollArea className="h-[100vh]  bg-[#131313] w-full md:pt-24 pt-10 ">
       <TitleComponent mb={30} fz={'lg'} color={'white'} ta={'center'}>
@@ -22,7 +22,7 @@ const MemberSidebar = ({ imgUrl }) => {
             text={'Diego Eke'}
           />
           <TextComponent color={'#DE5000'} text={'Member'} />
-          <TextComponent color={'#898C8F'} text={'ICT Department'} />
+          <TextComponent color={'#898C8F'} text={`${department} Department`} />
         </div>
       </div>
     </ScrollArea>

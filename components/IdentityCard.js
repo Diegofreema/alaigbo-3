@@ -46,15 +46,10 @@ const IdentityCard = ({
                   <div>
                     <div className="space-y-1">
                       <span className="text-xs">Other names</span>
-                      <div className="flex space-x-2">
+                      <div className="">
                         <TextComponent
                           fz={'md'}
-                          text={`${firstName} `}
-                          fw={'bold'}
-                        />
-                        <TextComponent
-                          fz={'md'}
-                          text={`${middleName} `}
+                          text={`${firstName} ${middleName}  `}
                           fw={'bold'}
                         />
                       </div>
