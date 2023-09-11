@@ -41,20 +41,9 @@ const InvestorProfile = () => {
   const onSubmit = async (values) => {
     try {
       const response = await axios.post('/api/createInvestor', values);
-      // await createInvestor(
-      //   values.companyName,
-      //   values.number,
-      //   values.representativeName,
-      //   values.email,
-      //   values.industry,
-      //   values.investmentPreference,
-      //   values.investmentExperience,
-      //   values.accreditation,
-      //   user?.id.toString()
-      // );
-      // console.log(values.accreditation);
+
       console.log(response);
-      console.log('sub,it');
+
       toast({
         variant: 'success',
         title: 'Successful',

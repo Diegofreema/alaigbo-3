@@ -18,7 +18,7 @@ const Hero = () => {
       original: '/4.jpg',
     },
     {
-      original: '/5.jpg',
+      original: '/5.jpeg',
     },
     {
       original: '/6.jpg',
@@ -28,6 +28,33 @@ const Hero = () => {
     },
     {
       original: '/8.jpg',
+    },
+    {
+      original: '/9.jpg',
+    },
+    {
+      original: '/10.jpg',
+    },
+    {
+      original: '/11.jpg',
+    },
+    {
+      original: '/12.jpg',
+    },
+    {
+      original: '/13.jpg',
+    },
+    {
+      original: '/14.jpg',
+    },
+    {
+      original: '/15.jpeg',
+    },
+    {
+      original: '/16.jpg',
+    },
+    {
+      original: '/17.webp',
     },
   ];
   return (
