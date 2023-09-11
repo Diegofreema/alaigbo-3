@@ -55,7 +55,6 @@ const AccountProfile = () => {
       gender: 'Male',
       interests: '',
       bio: '',
-      memberId: '',
       group: 'Agriculture',
     },
   });
@@ -89,6 +88,7 @@ const AccountProfile = () => {
         values.number,
         values.group
       );
+      console.log(values.group);
       toast({
         variant: 'success',
         title: 'Successful',

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 import SideBar from './SideBar';
 import { UserButton, useUser } from '@clerk/nextjs';
@@ -22,8 +23,12 @@ const Header = () => {
         )}
       >
         <div className="left text-base md:text-3xl">
-          <Link className="text-white" href={'/'}>
-            Alaigbo
+          <Link className="text-white flex items-center space-x-2" href={'/'}>
+            <Avatar className="mr-3">
+              <AvatarImage src="/logo.jpg" />
+              <AvatarFallback>AYF</AvatarFallback>
+            </Avatar>
+            Alaigbo Youth Forum
           </Link>
         </div>
 

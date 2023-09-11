@@ -30,18 +30,27 @@ import { useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import { countries } from '@/utils/file';
 import { ScrollArea } from '../ui/scroll-area';
+import axios from 'axios';
 const EventRegistration = () => {
-  const [currentUserId, setCurrentUserId] = useState('');
+  const [number, setNumber] = useState();
   const { user } = useUser();
   const { toast } = useToast();
   const router = useRouter();
   useEffect(() => {
     const getUser = async () => {
-      const isMember = await fetchUserMember(user.id);
-      setCurrentUserId(isMember?._id);
+      const { data } = await axios.get('/api/fetchMember');
+      const isMember = data.isOnboarded;
+      console.log(isMember);
+      setNumber(isMember?.number);
+      if (!isMember) {
+        router.push('/accountType');
+      }
     };
-
-    getUser();
+    try {
+      getUser();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const form = useForm({
@@ -52,7 +61,7 @@ const EventRegistration = () => {
       lastName: user?.lastName || '',
       middleName: '',
       email: user?.emailAddresses[0].emailAddress || '',
-      number: '',
+      number: number || '',
       location: 'Nigeria',
       accommodation: 'Yes',
       participants: 'Vip',
@@ -64,28 +73,18 @@ const EventRegistration = () => {
   const onInvalid = (errors) => console.error(errors);
   const onSubmit = async (values) => {
     try {
-      await eventBooking(
-        values.firstName,
-        values.lastName,
-        values.middleName,
-        values.email,
-        values.number,
-        values.guest,
-        values.reason,
-        values.update,
-        values.accommodation,
-        values.prefix,
-        values.location,
-        values.participants,
-        user?.id
-      );
+      const response = await axios.post('/api/book', {
+        ...values,
+        userId: user?.id,
+      });
+
       toast({
         variant: 'success',
         title: 'Successful',
         description: 'You have Booked this event',
       });
       form.reset();
-      // router.push('/');
+      router.push('/');
     } catch (error) {
       console.log(error);
       toast({
