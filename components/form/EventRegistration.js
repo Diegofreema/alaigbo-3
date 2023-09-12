@@ -1,6 +1,6 @@
 'use client';
-
 import { zodResolver } from '@hookform/resolvers/zod';
+
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -21,10 +21,7 @@ import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 import { bookingValidation } from '@/lib/validations/user';
 import { Textarea } from '@/components/ui/textarea';
-import { X } from 'lucide-react';
-import { eventBooking, fetchUserMember } from '@/lib/actions/user.actions';
 import { useToast } from '@/components/ui/use-toast';
-import { ToastAction } from '@/components/ui/toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
@@ -36,11 +33,12 @@ const EventRegistration = () => {
   const { user } = useUser();
   const { toast } = useToast();
   const router = useRouter();
+
   useEffect(() => {
     const getUser = async () => {
       const { data } = await axios.get('/api/fetchMember');
       const isMember = data.isOnboarded;
-      console.log(isMember);
+
       setNumber(isMember?.number);
       if (!isMember) {
         router.push('/accountType');
@@ -417,7 +415,7 @@ const EventRegistration = () => {
               className=" bg-orange-500 w-[400px]"
               type="submit"
             >
-              Register
+              Book
             </Button>
           </div>
         </form>
