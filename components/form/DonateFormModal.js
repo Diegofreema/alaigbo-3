@@ -16,7 +16,6 @@ import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 import { useUser } from '@clerk/nextjs';
 import { Input } from '../ui/input';
 
-const key = process.env.PUBLIC_KEY;
 const DonateFormModal = () => {
   const [amount, setAmount] = useState('');
   const { user } = useUser();
