@@ -7,6 +7,7 @@ import '@uploadthing/react/styles.css';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { CrispProvider } from '@/components/CrsipProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ClerkProvider>
         <Provider>
+          <CrispProvider />
           <body className={cn(inter.className)}>
             <Header />
             {children}
