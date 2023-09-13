@@ -28,7 +28,7 @@ const Links = () => {
       link: '/investor',
     },
     {
-      title: 'DASHBOARD',
+      title: 'PROJECT',
       link: '/',
     },
     {
@@ -37,7 +37,7 @@ const Links = () => {
     },
 
     {
-      title: 'PROFILE',
+      title: 'DASHBOARD',
       link: `/member/${user?.id}`,
     },
   ];
