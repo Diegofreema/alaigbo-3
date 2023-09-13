@@ -35,10 +35,7 @@ const Links = () => {
       title: 'DEPARTMENTS',
       link: '/department',
     },
-    {
-      title: 'CONTACT',
-      link: '/contact',
-    },
+
     {
       title: 'PROFILE',
       link: `/member/${user?.id}`,
