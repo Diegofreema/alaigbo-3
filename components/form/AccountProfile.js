@@ -65,7 +65,6 @@ const AccountProfile = () => {
     } else {
       setError(false);
     }
-    console.log(values.email);
 
     try {
       await createMember(

@@ -11,6 +11,7 @@ const MemberPage = async () => {
   const { id } = await currentUser();
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
+
   const date = format(isMember?.dob, 'PPP');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
