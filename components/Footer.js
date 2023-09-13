@@ -1,18 +1,26 @@
 'use client';
 import { TextInput } from '@mantine/core';
 import Link from 'next/link';
-import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaWhatsapp,
-  FaYoutube,
-  FaInstagram,
-} from 'react-icons/fa';
+import { FaTwitter, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 
+import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { useForm } from 'react-hook-form';
+import { useToast } from './ui/use-toast';
 const socialIcon = [
   {
     link: 'https://twitter.com/AlaIgboYouth',
@@ -31,8 +39,67 @@ const socialIcon = [
 ];
 const MotionLink = motion(Link);
 const Footer = () => {
+  const { toast } = useToast();
+  const formSchema = z.object({
+    email: z
+      .string()
+      .min(2, {
+        message: 'A valid email is required.',
+      })
+      .email(),
+  });
   const pathname = usePathname();
   const year = new Date().getFullYear();
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+    },
+  });
+
+  // 2. Define a submit handler.
+  async function onSubmit(values) {
+    try {
+      const res = await fetch('/api/subscriber', {
+        body: JSON.stringify({
+          email: values.email,
+        }),
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        method: 'POST',
+      });
+      const data = res.json();
+      if (data.status >= 400) {
+        return toast({
+          variant: 'destructive',
+          title: 'Error',
+          description: 'Something went wrong.',
+        });
+      }
+      if (data.status === 200) {
+        toast({
+          variant: 'success',
+          title: 'Success',
+          description: 'Thank you for subscribing.',
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: error.message,
+      });
+    } finally {
+      form.reset();
+    }
+
+    console.log(values);
+  }
+  const isLoading = form.formState.isSubmitting;
   return (
     <motion.footer
       className={cn(
@@ -56,15 +123,40 @@ const Footer = () => {
                   Be the first to receive progress updates and new offers from
                   ALAIGBO:
                 </p>
-                <TextInput
-                  placeholder="Email Address"
-                  className="flex-1 "
-                  rightSection={
-                    <div className="h-full w-[150px] text-white text-sm flex items-center justify-center p-2 bg-[#00AA00] rounded-tr-sm rounded-br-sm cursor-pointer">
-                      SUBSCRIBE
-                    </div>
-                  }
-                />
+                <div>
+                  <Form {...form}>
+                    <form
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className=" flex space-x-2"
+                    >
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormControl>
+                              <Input
+                                className="flex-1 h-[30px] py-1 "
+                                placeholder="Email"
+                                {...field}
+                              />
+                            </FormControl>
+
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <Button
+                        disabled={isLoading}
+                        className="  h-[30px] text-white text-sm flex items-center justify-center p-2 bg-[#00AA00] rounded-tr-sm rounded-br-sm cursor-pointer"
+                        type="submit"
+                      >
+                        {' '}
+                        SUBSCRIBE
+                      </Button>
+                    </form>
+                  </Form>
+                </div>
               </div>
             </div>
           </div>
