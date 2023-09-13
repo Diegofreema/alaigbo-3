@@ -28,7 +28,7 @@ const Links = () => {
       link: '/investor',
     },
     {
-      title: 'PROJECT',
+      title: 'DASHBOARD',
       link: '/',
     },
     {
