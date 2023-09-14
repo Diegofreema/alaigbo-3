@@ -38,7 +38,7 @@ const AccountProfile = () => {
   const { user } = useUser();
   const [value, setValue] = useState(null);
   const form = useForm({
-    resolver: zodResolver(userValidation),
+    resolver: zodResolver(),
     defaultValues: {
       imgUrl: '',
       firstName: '',

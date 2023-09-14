@@ -3,10 +3,13 @@ import TitleComponent from './mantine/TitleComponent';
 import { ScrollArea } from './ui/scroll-area';
 import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
+import { Button, buttonVariants } from './ui/button';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const MemberSidebar = ({ imgUrl, department }) => {
   return (
-    <ScrollArea className="h-[100vh]  bg-[#131313] w-full md:pt-24 pt-10 ">
+    <ScrollArea className="h-[100vh] bg-[#131313] w-full md:pt-24 pt-10 ">
       <TitleComponent mb={30} fz={'lg'} color={'white'} ta={'center'}>
         Alaigbo
       </TitleComponent>
@@ -29,6 +32,14 @@ const MemberSidebar = ({ imgUrl, department }) => {
           <TextComponent color={'#DE5000'} text={'Member'} />
           <TextComponent color={'#898C8F'} text={`${department} Department`} />
         </div>
+      </div>
+      <div className="flex justify-center mt-4">
+        <Link
+          href={'/update-profile'}
+          className={cn(buttonVariants({ variant: 'link' }))}
+        >
+          Update profile
+        </Link>
       </div>
     </ScrollArea>
   );

@@ -80,17 +80,6 @@ const Hero = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
-      {/* <ImageGallery
-        renderItem={(item) => <ImageSlider item={item} />}
-        items={images}
-        autoPlay
-        showBullets
-        showFullscreenButton={false}
-        showNav={false}
-        showPlayButton={false}
-        useBrowserFullscreen={false}
-        additionalClass="w-full"
-      /> */}
     </div>
   );
 };
