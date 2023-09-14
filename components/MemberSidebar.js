@@ -33,14 +33,14 @@ const MemberSidebar = ({ imgUrl, department }) => {
           <TextComponent color={'#898C8F'} text={`${department} Department`} />
         </div>
       </div>
-      <div className="flex justify-center mt-4">
+      {/* <div className="flex justify-center mt-4">
         <Link
           href={'/update-profile'}
           className={cn(buttonVariants({ variant: 'link' }))}
         >
           Update profile
         </Link>
-      </div>
+      </div> */}
     </ScrollArea>
   );
 };
