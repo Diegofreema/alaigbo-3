@@ -9,11 +9,20 @@ import { redirect } from 'next/navigation';
 
 const MemberPage = async () => {
   const { id } = await currentUser();
+  if (!id) {
+    redirect('/sign-in');
+  }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const year = new Date(isMember?.dob).getFullYear();
+  const month = new Date(isMember?.dob).getMonth() + 1;
 
-  const date = format(isMember?.dob, 'PPP');
+  const day = new Date(isMember?.dob).getDay();
 
+  console.log(isMember?.dob);
+  console.log(day, month, year);
+  console.log(format(isMember?.dob, 'yyyy-MM-dd'));
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
   }
@@ -42,7 +51,9 @@ const MemberPage = async () => {
                 village={isMember?.village}
                 familyName={isMember?.familyName}
                 gender={isMember?.gender}
-                dob={date}
+                day={day}
+                year={year}
+                month={month}
               />
             </div>
             <div className="sm:col-span-1">

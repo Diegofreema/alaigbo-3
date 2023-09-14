@@ -1,9 +1,14 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import NavLinks from './NavLinks';
 import { useUser } from '@clerk/nextjs';
 
 const Links = () => {
-  const { user } = useUser();
+  const router = useRouter();
+  const { user, isSignedIn } = useUser();
+  if (!user?.id) {
+    router.push('/sign-up');
+  }
 
   const navLinks = [
     {
@@ -37,8 +42,8 @@ const Links = () => {
     },
 
     {
-      title: 'DASHBOARD',
-      link: `/member/${user?.id}`,
+      title: isSignedIn ? 'DASHBOARD' : null,
+      link: isSignedIn ? `/member/${user?.id}` : null,
     },
   ];
   return (

@@ -7,6 +7,9 @@ import { redirect, useRouter } from 'next/navigation';
 const InvestorPage = async () => {
   const { id } = await currentUser();
 
+  if (!id) {
+    redirect('/sign-in');
+  }
   const investor = await fetchInvestor(id);
 
   if (!isMember || !investor) redirect('/accountType');

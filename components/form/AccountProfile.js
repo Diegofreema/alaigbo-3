@@ -443,7 +443,7 @@ const AccountProfile = () => {
                 </FormItem>
               )}
             />
-            <>
+            <div className="mt-2">
               <DatePickerInput
                 error={error}
                 label={'Date of birth'}
@@ -467,7 +467,7 @@ const AccountProfile = () => {
               {error ? (
                 <span className="text-red-500">Pick a date of birth</span>
               ) : null}
-            </>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

@@ -1,6 +1,4 @@
 import AccountProfile from '@/components/form/AccountProfile';
-import { currentUser } from '@clerk/nextjs';
-import React from 'react';
 
 const Onboard = async () => {
   return (

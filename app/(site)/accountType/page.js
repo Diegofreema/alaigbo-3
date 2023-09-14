@@ -24,11 +24,11 @@ const AccountType = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <Dialog open>
-        <DialogContent className="space-y-3">
+        <DialogContent className="space-y-3 ">
           <DialogHeader
             onClick={() => setType('investor')}
             className={cn(
-              'p-4 border  rounded-md',
+              'p-4 border  rounded-md cursor-pointer',
               type === 'investor' ? 'border-[#DE5000]' : 'border-black'
             )}
           >
@@ -48,7 +48,7 @@ const AccountType = () => {
           <DialogHeader
             onClick={() => setType('member')}
             className={cn(
-              'p-4 border  rounded-md',
+              'p-4 border cursor-pointer  rounded-md',
               type === 'member' ? 'border-[#DE5000]' : 'border-black'
             )}
           >
