@@ -14,14 +14,8 @@ const MemberPage = async () => {
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
-  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const year = new Date(isMember?.dob).getFullYear();
-  const month = new Date(isMember?.dob).getMonth() + 1;
 
-  const day = new Date(isMember?.dob).getDay();
   const date = format(isMember?.dob, 'yyyy-MM-dd');
-  console.log(isMember?.dob);
-  console.log(day, month, year);
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
