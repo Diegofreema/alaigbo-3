@@ -17,9 +17,7 @@ const IdentityCard = async ({
   middleName,
   state,
   lga,
-  day,
-  year,
-  month,
+  dob,
 }) => {
   return (
     <div>
@@ -81,11 +79,7 @@ const IdentityCard = async ({
                   </div>
                   <div className="">
                     <span className="text-xs inline-block">DOB</span>
-                    <TextComponent
-                      fz={'sm'}
-                      text={`${day}/${month}/${year}`}
-                      fw={'bold'}
-                    />
+                    <TextComponent fz={'sm'} text={dob} fw={'bold'} />
                   </div>
                 </div>
               </div>

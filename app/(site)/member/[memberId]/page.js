@@ -19,10 +19,10 @@ const MemberPage = async () => {
   const month = new Date(isMember?.dob).getMonth() + 1;
 
   const day = new Date(isMember?.dob).getDay();
-
+  const date = format(isMember?.dob, 'yyyy-MM-dd');
   console.log(isMember?.dob);
   console.log(day, month, year);
-  console.log(format(isMember?.dob, 'yyyy-MM-dd'));
+
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
   }
@@ -51,9 +51,7 @@ const MemberPage = async () => {
                 village={isMember?.village}
                 familyName={isMember?.familyName}
                 gender={isMember?.gender}
-                day={day}
-                year={year}
-                month={month}
+                dob={date}
               />
             </div>
             <div className="sm:col-span-1">
