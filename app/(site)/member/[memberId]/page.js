@@ -2,9 +2,10 @@ import EventCard from '@/components/Events/EventCard';
 import IdentityCard from '@/components/IdentityCard';
 import MemberSidebar from '@/components/MemberSidebar';
 import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
-import moment from 'moment';
+
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
+import { format } from 'date-fns';
 
 const MemberPage = async () => {
   const { id } = await currentUser();
@@ -13,7 +14,7 @@ const MemberPage = async () => {
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
-  const date = moment(isMember?.dob).format('DD-MM-YYYY');
+  const date = format(isMember?.dob, 'PPP');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');

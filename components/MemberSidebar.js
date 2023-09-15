@@ -38,7 +38,7 @@ const MemberSidebar = ({ imgUrl, department }) => {
           href={'/update-profile'}
           className={cn(buttonVariants({ variant: 'link' }))}
         >
-          Update profile
+          Edit profile
         </Link>
       </div>
     </ScrollArea>
