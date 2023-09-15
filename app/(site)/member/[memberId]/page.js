@@ -6,6 +6,7 @@ import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import { format } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 
 const MemberPage = async () => {
   const { id } = await currentUser();
@@ -14,7 +15,8 @@ const MemberPage = async () => {
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
-  const date = format(isMember?.dob, 'PPP');
+  const zonedTime = utcToZonedTime(isMember?.dob, 'Africa/Lagos');
+  const date = format(zonedTime, 'dd/MM/yyyy');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
