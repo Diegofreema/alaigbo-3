@@ -4,8 +4,8 @@ import NavLinks from './NavLinks';
 import { useUser } from '@clerk/nextjs';
 
 const Links = () => {
-  const router = useRouter();
   const { user, isSignedIn } = useUser();
+  const router = useRouter();
   if (!user?.id) {
     router.push('/sign-up');
   }
@@ -40,17 +40,18 @@ const Links = () => {
       title: 'DEPARTMENTS',
       link: '/department',
     },
-
-    {
-      title: isSignedIn ? 'DASHBOARD' : null,
-      link: isSignedIn ? `/member/${user?.id}` : null,
-    },
   ];
+  const data = {
+    title: 'DASHBOARD',
+    link: `/member/${user?.id}`,
+  };
   return (
-    <div className="menu-lg bg-[#373435] flex items-center flex-col justify-center h-screen absolute w-full top-0 -right-14 -translate-x-[50px] bottom-0">
+    <div className="menu-lg bg-[#373435] space-y-2 flex items-center flex-col justify-center h-screen absolute w-full top-0 -right-14 -translate-x-[50px] bottom-0">
       {navLinks.map((item, i) => (
         <NavLinks key={i} item={item} />
       ))}
+
+      {isSignedIn && <NavLinks item={data} />}
     </div>
   );
 };

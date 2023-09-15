@@ -5,6 +5,7 @@ import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
 
 import { currentUser } from '@clerk/nextjs';
 import { format } from 'date-fns';
+import moment from 'moment/moment';
 import { redirect } from 'next/navigation';
 
 const MemberPage = async () => {
@@ -15,7 +16,7 @@ const MemberPage = async () => {
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
 
-  const date = format(isMember?.dob, 'yyyy-MM-dd');
+  const date = moment(isMember?.dob).format('DD-MM-YYYY');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');

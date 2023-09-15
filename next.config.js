@@ -6,7 +6,12 @@ const nextConfig = {
     serverActions: true,
   },
   images: {
-    domains: ['lh3.googleusercontent.com', 'uploadthing.com', 'utfs.io'],
+    domains: [
+      'lh3.googleusercontent.com',
+      'uploadthing.com',
+      'utfs.io',
+      'img.clerk.com',
+    ],
   },
   webpack(config) {
     config.experiments = {

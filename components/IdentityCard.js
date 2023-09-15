@@ -40,14 +40,14 @@ const IdentityCard = async ({
             <div className=" ">
               <div>
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="space-y-1">
+                  <div className="space-y-1 capitalized">
                     <span className="text-xs">Surname</span>
                     <TextComponent fz={'md'} text={lastName} fw={'bold'} />
                   </div>
                   <div>
                     <div className="space-y-1">
                       <span className="text-xs">Other names</span>
-                      <div className="">
+                      <div className="capitalized">
                         <TextComponent
                           fz={'md'}
                           text={`${firstName} ${middleName}  `}
@@ -59,19 +59,19 @@ const IdentityCard = async ({
                 </div>
 
                 <div className="grid grid-cols-2 gap-1">
-                  <div>
+                  <div className="capitalized">
                     <span className="text-xs whitespace-nowrap">
                       State of origin
                     </span>
                     <TextComponent fz={'md'} text={state} fw={'bold'} />
                   </div>
-                  <div>
+                  <div className="capitalized">
                     <span className="text-xs">LGA</span>
                     <TextComponent fz={'md'} text={lga} fw={'bold'} />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-1">
-                  <div>
+                  <div className="capitalized">
                     <span className="text-xs whitespace-nowrap">
                       Member Type
                     </span>
