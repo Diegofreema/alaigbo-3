@@ -13,16 +13,7 @@ const MemberPage = async () => {
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
-
-  const day = new Date(isMember?.dob).getDate() + 1;
-  const month = new Date(isMember?.dob).getMonth() + 1;
-  const year = new Date(isMember?.dob).getFullYear();
-  console.log(day);
-  const date = {
-    day,
-    month,
-    year,
-  };
+  const date = moment(isMember?.dob).format('DD-MM-YYYY');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
