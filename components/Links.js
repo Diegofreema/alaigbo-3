@@ -1,7 +1,8 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
 import NavLinks from './NavLinks';
-import { useUser } from '@clerk/nextjs';
+import { SignOutButton, useUser } from '@clerk/nextjs';
+import { LogOutIcon } from 'lucide-react';
 
 const Links = () => {
   const { user, isSignedIn } = useUser();
@@ -60,6 +61,15 @@ const Links = () => {
       <div className="md:hidden">
         {pathName === `/member/${user?.id}` && <NavLinks item={updateData} />}
       </div>
+      <SignOutButton>
+        <div className="flex items-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
+          <LogOutIcon
+            color="white"
+            className="hover:text-orange-500 transition duration-300"
+          />
+          <p className="text-white ">Log out</p>
+        </div>
+      </SignOutButton>
     </div>
   );
 };
