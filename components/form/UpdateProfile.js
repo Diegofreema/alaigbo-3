@@ -533,7 +533,7 @@ const UpdateProfile = ({ userData }) => {
               className=" bg-orange-500 w-[400px]"
               type="submit"
             >
-              Update
+              Submit
             </Button>
           </div>
         </form>

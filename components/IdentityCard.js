@@ -26,7 +26,7 @@ const IdentityCard = async ({
           <CardTitle className="text-center">ALAIGBO YOUTH FORUM</CardTitle>
         </CardHeader>
         <CardContent className="w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center  space-x-3 space-y-3 w-full ">
+          <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2 place-items-center  space-x-3 space-y-3 w-full ">
             <div className="w-[200px] h-[200px] rounded-full  relative overflow-hidden">
               <Image
                 alt="profile-image"

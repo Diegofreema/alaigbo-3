@@ -48,7 +48,7 @@ const Links = () => {
     link: `/member/${user?.id}`,
   };
   const updateData = {
-    title: 'UPDATE PROFILE',
+    title: 'Edit PROFILE',
     link: `/update-profile`,
   };
   return (
