@@ -15,7 +15,7 @@ const MemberPage = async () => {
   const isInvestor = await fetchInvestor(id);
 
   const day = new Date(isMember?.dob).getDate();
-  const month = new Date(isMember?.dob).getMonth() + 1;
+  const month = new Date(isMember?.dob).getMonth() + 2;
   const year = new Date(isMember?.dob).getFullYear();
   const date = {
     day,
