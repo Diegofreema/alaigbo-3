@@ -186,7 +186,7 @@ export const writeUp = [
   },
   {
     id: '4',
-    label: '1. Strategic Location and Infrastructure: 4. Abundant Resources: ',
+    label: '4. Abundant Resources: ',
     content: `Alaigbo is blessed with abundant natural resources, including fertile farmlands, mineral deposits, and renewable energy sources. These resources provide a solid foundation for investment in agriculture, mining, and clean energy projects. We invite investors to tap into these resources responsibly, creating sustainable ventures that contribute to economic growth and environmental conservation.`,
   },
   {

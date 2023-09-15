@@ -14,60 +14,7 @@ const Main = () => {
       <h1 className="text-center text-3xl  md:text-5xl font-bold text-[#F37435] mb-16">
         WHY CHOOSE <span className="text-[#00AA00]">ALAIGBO</span>
       </h1>
-      {/* <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 md:gap-y-8 container mx-auto">
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 0.5 }}
-          className="border border-black rounded-md md:h-[320px]  h-[200px]"
-        ></motion.div>
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 0.5 }}
-        >
-          <h2 className="font-bold text-center mb-4 text-3xl">Human Capital</h2>
-          <div className="text-center">
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 0.5 }}
-          className="border border-black rounded-md md:h-[320px] h-[200px]"
-        ></motion.div>
-        <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 0.5 }}
-        >
-          <h2 className="font-bold text-center mb-4 text-3xl">INVESTMENT</h2>
-          <div className="text-center">
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-            <p>Lorem Ipsum Dolor Lorem Ipsum Dolor</p>
-          </div>
-        </motion.div>
-      </div> */}
+
       <div>
         <div className="md:w-[70%] w-[95%] mx-auto">
           <Title order={2} ta={'center'} mb={20}>
