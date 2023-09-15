@@ -2,7 +2,7 @@ import EventCard from '@/components/Events/EventCard';
 import IdentityCard from '@/components/IdentityCard';
 import MemberSidebar from '@/components/MemberSidebar';
 import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
-
+import moment from 'moment';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
