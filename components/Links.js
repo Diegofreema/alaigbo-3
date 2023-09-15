@@ -1,11 +1,12 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import NavLinks from './NavLinks';
 import { useUser } from '@clerk/nextjs';
 
 const Links = () => {
   const { user, isSignedIn } = useUser();
   const router = useRouter();
+  const pathName = usePathname();
   if (!user?.id) {
     router.push('/sign-up');
   }
@@ -45,6 +46,10 @@ const Links = () => {
     title: 'DASHBOARD',
     link: `/member/${user?.id}`,
   };
+  const updateData = {
+    title: 'UPDATE PROFILE',
+    link: `/update-profile`,
+  };
   return (
     <div className="menu-lg bg-[#373435] space-y-2 flex items-center flex-col justify-center h-screen absolute w-full top-0 -right-14 -translate-x-[50px] bottom-0">
       {navLinks.map((item, i) => (
@@ -52,6 +57,9 @@ const Links = () => {
       ))}
 
       {isSignedIn && <NavLinks item={data} />}
+      <div className="md:hidden">
+        {pathName === `/member/${user?.id}` && <NavLinks item={updateData} />}
+      </div>
     </div>
   );
 };

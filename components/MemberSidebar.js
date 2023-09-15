@@ -3,7 +3,7 @@ import TitleComponent from './mantine/TitleComponent';
 import { ScrollArea } from './ui/scroll-area';
 import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
-import { Button, buttonVariants } from './ui/button';
+import { buttonVariants } from './ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
@@ -17,7 +17,7 @@ const MemberSidebar = ({ imgUrl, department }) => {
         <div className="overflow-hidden relative  rounded-full h-12 w-12 mr-4">
           <Image
             alt="profile-image"
-            src={imgUrl}
+            src={imgUrl || '/download.jpg'}
             fill
             className="object-cover"
           />
@@ -33,14 +33,14 @@ const MemberSidebar = ({ imgUrl, department }) => {
           <TextComponent color={'#898C8F'} text={`${department} Department`} />
         </div>
       </div>
-      {/* <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-4">
         <Link
           href={'/update-profile'}
           className={cn(buttonVariants({ variant: 'link' }))}
         >
           Update profile
         </Link>
-      </div> */}
+      </div>
     </ScrollArea>
   );
 };

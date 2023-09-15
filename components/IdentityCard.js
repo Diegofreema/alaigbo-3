@@ -79,7 +79,11 @@ const IdentityCard = async ({
                   </div>
                   <div className="">
                     <span className="text-xs inline-block">DOB</span>
-                    <TextComponent fz={'sm'} text={dob} fw={'bold'} />
+                    <TextComponent
+                      fz={'sm'}
+                      text={`${dob.day}/${dob.month}/${dob.year}`}
+                      fw={'bold'}
+                    />
                   </div>
                 </div>
               </div>
