@@ -2,14 +2,12 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Provider from '@/components/Provider';
 import { Toaster } from '@/components/ui/toaster';
-import { ClerkLoaded, ClerkLoading, ClerkProvider } from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
 import '@uploadthing/react/styles.css';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { CrispProvider } from '@/components/CrsipProvider';
-import { LoaderIcon } from 'lucide-react';
-import Loading from '@/components/Loading';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,10 +20,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ClerkProvider>
-        {/* <ClerkLoading>
-          <Loading />
-        </ClerkLoading> */}
-
         <Provider>
           <CrispProvider />
           <body className={cn(inter.className)}>

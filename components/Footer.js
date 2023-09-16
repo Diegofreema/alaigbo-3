@@ -1,5 +1,4 @@
 'use client';
-import { TextInput } from '@mantine/core';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaTwitter, FaWhatsapp, FaInstagram } from 'react-icons/fa';
@@ -12,15 +11,14 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 import { useToast } from './ui/use-toast';
+import axios from 'axios';
 const socialIcon = [
   {
     link: 'https://twitter.com/AlaIgboYouth',
@@ -57,29 +55,12 @@ const Footer = () => {
     },
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values) {
+    const { email } = values;
     try {
-      const res = await fetch('/api/subscriber', {
-        body: JSON.stringify({
-          email: values.email,
-        }),
+      const response = await axios.post('/api/subscriber', { email });
 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-
-        method: 'POST',
-      });
-      const data = res.json();
-      if (data.status >= 400) {
-        return toast({
-          variant: 'destructive',
-          title: 'Error',
-          description: 'Something went wrong.',
-        });
-      }
-      if (data.status === 200) {
+      if (response.status === 200) {
         toast({
           variant: 'success',
           title: 'Success',
@@ -96,8 +77,6 @@ const Footer = () => {
     } finally {
       form.reset();
     }
-
-    console.log(values);
   }
   const isLoading = form.formState.isSubmitting;
   return (

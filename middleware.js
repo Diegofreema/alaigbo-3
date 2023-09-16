@@ -12,6 +12,8 @@ export default authMiddleware({
     '/contact',
     '/abstract',
     '/api/webhook',
+    '/api/auth/_log',
+    '/api/auth/session',
   ],
 });
 
