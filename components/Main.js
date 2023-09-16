@@ -30,7 +30,7 @@ const Main = () => {
           <div className="mt-8 mb-16">
             <DemoTwo data={texts} />
           </div>
-          <Title mt={30} order={2} ta={'center'} mb={20}>
+          <Title mt={30} order={3} ta={'center'} mb={20}>
             Invest in Alaigbo: Unlocking Opportunities for Growth and Returns
           </Title>
           <Text mb={20} fz={'md'} fw={'500'} fs={'italic'}>
@@ -39,7 +39,7 @@ const Main = () => {
             sectors, incentives, and strategic advantages that make Alaigbo an
             attractive investment destination.
           </Text>
-          <Title order={2} mt={50} ta={'left'} mb={20}>
+          <Title order={3} mt={50} ta={'left'} mb={20}>
             Introduction:
           </Title>
           <Text fz={'md'} fw={'500'} fs={'italic'}>

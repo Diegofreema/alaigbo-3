@@ -4,33 +4,33 @@ const images = [
   {
     src: '/nanocodes.png',
     text: 'Nanocodes Programming',
-    url: 'https://www.nanocodes.com.ng'
+    url: 'https://www.nanocodes.com.ng',
   },
   {
     src: '/olu.jpg',
     text: 'Voice of The East',
-    url: ''
+    url: '',
   },
   {
     src: '/img1.jpg',
     text: 'Switch Dev',
-    url: ''
+    url: '',
   },
   {
     src: '/img2.jpg',
     text: 'Ruoya Nigeria',
-    url: ''
+    url: '',
   },
   {
     src: '/img3.jpg',
     text: 'Service Culture Academy',
-    url: ''
+    url: '',
   },
 ];
 
 const Sponsor = () => {
   return (
-    <div className="bg-[#AFBD7733] py-[100px] min-h-screen px-4">
+    <div className="bg-[#AFBD7733] py-[100px] min-h-screen px-2">
       <div className="container mx-auto">
         <h2 className="text-3xl  md:text-5xl text-center font-bold mb-[100px]">
           Our <span className="text-[#F37435]">Partners</span>

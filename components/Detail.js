@@ -6,26 +6,28 @@ import { GiCargoShip } from 'react-icons/gi';
 import { motion } from 'framer-motion';
 const Detail = () => {
   return (
-    <div className="min-h-screen py-[100px] w-full  bg-[#042B04]">
-      <div className="container grid lg:grid-cols-2 grid-cols-1 gap-8  mx-auto w-[80%]">
+    <div className="min-h-screen  py-[100px] w-full  bg-[#042B04]">
+      <div className=" grid md:grid-cols-2 grid-cols-1 gap-8  mx-auto w-[70%]">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ type: 'spring', duration: 0.8 }}
           className="left text-center md:text-left "
         >
-          <h2 className="font-bold text-white text-3xl text-center md:text-4xl mb-24 ">
+          <h2 className="font-bold text-white text-xl  text-center md:text-4xl mb-24 ">
             THIS IS ALAIGBO
           </h2>
-          <p className="text-lg mb-8 text-[#FFCC29] border-b border-[#FFCC29] pb-2 w-fit">
-            PLACE
-          </p>
-          <p className="text-lg mb-8 text-[#fff] border-b border-[#fff] pb-2 w-fit">
-            REGIONS/CITIES
-          </p>
-          <p className="text-lg mb-8 text-[#fff] border-b border-[#fff] pb-2 w-fit">
-            METRICS
-          </p>
+          <div className="flex space-x-4 items-center justify-center ">
+            <p className="md:text-lg  text-base  mb-8 text-[#FFCC29] border-b border-[#FFCC29] pb-2 w-fit">
+              PLACE
+            </p>
+            <p className="md:text-lg  text-base mb-8 text-[#fff] border-b border-[#fff] pb-2 w-fit">
+              REGIONS/CITIES
+            </p>
+            <p className="md:text-lg  text-base mb-8 text-[#fff] border-b border-[#fff] pb-2 w-fit">
+              METRICS
+            </p>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
