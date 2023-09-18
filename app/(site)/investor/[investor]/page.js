@@ -8,7 +8,7 @@ const InvestorPage = async () => {
   const { id } = await currentUser();
 
   if (!id) {
-    redirect('/sign-in');
+    redirect('/');
   }
   const investor = await fetchInvestor(id);
 

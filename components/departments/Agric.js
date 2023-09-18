@@ -1,5 +1,6 @@
 import React from 'react';
 import TitleComponent from '../mantine/TitleComponent';
+import Link from 'next/link';
 
 const Agric = () => {
   return (
@@ -136,7 +137,7 @@ const Agric = () => {
             large.
           </p>
           <p className="font-semibold text-lg">Conclusions</p>
-          <p>
+          <p className="!mb-8">
             This Agricultural Project holds the promise of revitalizing the
             South East region's agricultural sector. By establishing
             Agribusiness Centers, empowering youth, diversifying crops, and
@@ -147,6 +148,13 @@ const Agric = () => {
             national goal of transforming Nigeria into a self-reliant,
             agricultural powerhouse.
           </p>
+          <Link
+            href={' https://chat.whatsapp.com/IX0BLK5ZC9Q6Fuv4cHdQN7'}
+            target="_blank"
+            className=" text-blue-500"
+          >
+            Join the agricultural whatsapp group
+          </Link>
         </div>
       </div>
     </div>

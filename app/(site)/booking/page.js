@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 const EventOnboard = async () => {
   const { id } = await currentUser();
   if (!id) {
-    redirect('/sign-in');
+    redirect('/');
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);

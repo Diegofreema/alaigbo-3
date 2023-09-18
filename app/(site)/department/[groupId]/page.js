@@ -2,13 +2,17 @@ import Agric from '@/components/departments/Agric';
 import Creative from '@/components/departments/Creative';
 import Education from '@/components/departments/Education';
 import Entertainment from '@/components/departments/Entertainment';
+import Finance from '@/components/departments/Finance';
 import Healthcare from '@/components/departments/Healthcare';
 import Housing from '@/components/departments/Housing';
 import Ict from '@/components/departments/Ict';
+import Legal from '@/components/departments/Legal';
 import Manufacture from '@/components/departments/Manufacture';
 import Media from '@/components/departments/Media';
 import Mining from '@/components/departments/Mining';
+import Politics from '@/components/departments/Politics';
 import Research from '@/components/departments/Research';
+import Security from '@/components/departments/Security';
 import Sports from '@/components/departments/Sports';
 import Tourism from '@/components/departments/Tourism';
 import Transportation from '@/components/departments/Transportation';
@@ -17,54 +21,66 @@ import React from 'react';
 
 const Group = ({ params }) => {
   switch (params.groupId) {
-    case '1':
+    case 'education':
       return <Education />;
       break;
-    case '2':
+    case 'agriculture':
       return <Agric />;
       break;
-    case '3':
+    case 'ict':
       return <Ict />;
       break;
-    case '4':
+    case 'manufacture':
       return <Manufacture />;
       break;
-    case '5':
+    case 'research':
       return <Research />;
       break;
-    case '6':
+    case 'creative':
       return <Creative />;
       break;
-    case '7':
+    case 'entertainment':
       return <Entertainment />;
       break;
-    case '8':
+    case 'sports':
       return <Sports />;
       break;
-    case '9':
+    case 'transportation':
       return <Transportation />;
       break;
-    case '10':
+    case 'housing':
       return <Housing />;
       break;
-    case '11':
+    case 'urban':
       return <Urban />;
       break;
-    case '12':
+    case 'media':
       return <Media />;
       break;
-    case '13':
+    case 'healthcare':
       return <Healthcare />;
       break;
-    case '14':
+    case 'mining':
       return <Mining />;
       break;
-    case '15':
+    case 'tourism':
       return <Tourism />;
+      break;
+    case 'security':
+      return <Security />;
+      break;
+    case 'finance':
+      return <Finance />;
+      break;
+    case 'politics':
+      return <Politics />;
+      break;
+    case 'legal':
+      return <Legal />;
       break;
 
     default:
-      return <div>Group</div>;
+      return <div>Loading...</div>;
       break;
   }
 };
