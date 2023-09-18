@@ -6,7 +6,7 @@ function AccordionLabel({ label, description }) {
   return (
     <Group noWrap>
       <div>
-        <Title order={4} fw={'bold'}>
+        <Title order={4} ta={'center'} fw={'bold'}>
           {label}
         </Title>
         {description && (
@@ -41,7 +41,7 @@ function Demo() {
     </Accordion.Item>
   ));
   return (
-    <Accordion chevronPosition="right" variant="contained" mt={80}>
+    <Accordion chevronPosition="right" variant="filled" mt={80}>
       {items}
     </Accordion>
   );
