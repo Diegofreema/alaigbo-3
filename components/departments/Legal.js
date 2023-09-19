@@ -9,10 +9,10 @@ const Legal = () => {
         Legal Department
       </TitleComponent>
       <div className="md:w-[70%] sm:w-[85%] w-[95%] space-y-4  mx-auto">
-        <h4 className="mt-16 font-semibold text-lg">
+        <h4 className="mt-16 font-semibold text-lg ">
           The Legal Team being the heart of the AYF diligently endeavors that
           accountable and responsible decisions are reached by well legally
-          informed designated individuals.{' '}
+          informed designated individuals.
         </h4>
         <p className="text-sm sm:text-base">
           The legal Team diligently endeavors to properly guide AYF in
