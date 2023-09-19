@@ -14,43 +14,43 @@ const Legal = () => {
           accountable and responsible decisions are reached by well legally
           informed designated individuals.{' '}
         </h4>
-        <p>
+        <p className="text-sm sm:text-base">
           The legal Team diligently endeavors to properly guide AYF in
           compliance with all relevant statutes and regulations.
         </p>
-        <p>
+        <p className="text-sm sm:text-base">
           The Legal Team consists of lawyers, legal experts and academicians.
         </p>
-        <p>
+        <p className="text-sm sm:text-base">
           The legal team is responsible for providing legal guidance and
           support, ensuring compliance with applicable laws and regulations.
           Some of the core responsibilities of the AYF Legal Team includes but
           not limited to:
         </p>
-        <p>
+        <p className="text-sm sm:text-base">
           -Providing legal advice and support: The legal department is
           responsible for providing legal advice and support including
           identifying legal risks and recommending strategies to mitigate those
           risks.
         </p>
-        <p>
+        <p className="text-sm sm:text-base">
           -Drafting and reviewing contracts: The legal team is responsible for
           drafting and reviewing contracts and other legal documents, to ensure
           that they are legally sound and protect AYF interests.
         </p>
 
-        <p>
+        <p className="text-sm sm:text-base">
           -Ensuring compliance with laws and regulations: The legal team is
           responsible for ensuring that AYF complies with applicable laws and
           regulations.
         </p>
         <div>
-          <p>
+          <p className="text-sm sm:text-base">
             -Managing legal disputes: The legal team is responsible for managing
             any legal disputes that AUF may face, including litigation,
             arbitration, and mediation.
           </p>
-          <p>
+          <p className="text-sm sm:text-base">
             -Managing corporate governance: The legal team is responsible for
             managing the AYF corporate governance, including ensuring compliance
             with legal and regulatory requirements, managing board meetings, and
@@ -58,7 +58,7 @@ const Legal = () => {
           </p>
         </div>
 
-        <p className="!mb-8">
+        <p className="text-sm sm:text-base !mb-6">
           -Providing training and education: The legal team is responsible for
           providing training and education on legal issues and risks, including
           compliance training for employees and managers.

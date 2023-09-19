@@ -31,7 +31,6 @@ const Header = () => {
               <AvatarFallback>AYF</AvatarFallback>
             </Avatar>
             <p className="hidden md:block">Alaigbo Youth Forum</p>
-            <p className="md:hidden">AYF</p>
           </Link>
         </div>
 
