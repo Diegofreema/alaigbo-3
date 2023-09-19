@@ -14,8 +14,8 @@ const MemberPage = async () => {
   }
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
-  const utcMoment = moment.utc(isMember?.dob);
-  const date = utcMoment.tz('Africa/Lagos').format('DD/MM/YYYY');
+  // const utcMoment = moment.utc(isMember?.dob);
+  // const date = utcMoment.tz('Africa/Lagos').format('DD/MM/YYYY');
 
   if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
     return redirect('/accountType');
@@ -45,7 +45,6 @@ const MemberPage = async () => {
                 village={isMember?.village}
                 familyName={isMember?.familyName}
                 gender={isMember?.gender}
-                dob={date}
               />
             </div>
             <div className="sm:col-span-1">

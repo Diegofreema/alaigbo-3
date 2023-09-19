@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
 
@@ -17,7 +10,8 @@ const IdentityCard = async ({
   middleName,
   state,
   lga,
-  dob,
+  village,
+  town,
 }) => {
   return (
     <div>
@@ -72,14 +66,12 @@ const IdentityCard = async ({
                 </div>
                 <div className="grid grid-cols-2 gap-1">
                   <div className="capitalized">
-                    <span className="text-xs whitespace-nowrap">
-                      Member Type
-                    </span>
-                    <TextComponent fz={'sm'} text={'Executive'} fw={'bold'} />
+                    <span className="text-xs whitespace-nowrap">Town</span>
+                    <TextComponent fz={'sm'} text={town} fw={'bold'} />
                   </div>
                   <div className="">
-                    <span className="text-xs inline-block">DOB</span>
-                    <TextComponent fz={'sm'} text={dob} fw={'bold'} />
+                    <span className="text-xs inline-block">Village</span>
+                    <TextComponent fz={'sm'} text={village} fw={'bold'} />
                   </div>
                 </div>
               </div>
