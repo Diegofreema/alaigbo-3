@@ -67,6 +67,7 @@ const Hero = () => {
         className="!w-full"
         infiniteLoop
         interval={2000}
+        showThumbs={false}
       >
         {images.map((image, index) => (
           <div className="w-full min-h-screen relative" key={index}>
