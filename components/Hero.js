@@ -1,6 +1,7 @@
 'use client';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { Carousel } from '@mantine/carousel';
+import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -60,16 +61,15 @@ const Hero = () => {
   return (
     <div className="h-screen w-full flex">
       <Carousel
-        loop
-        dragFree
-        height="100%"
-        className="h-screen"
-        slideSize={'100%'}
-        sx={{ flex: 1 }}
-        withIndicators
+        autoPlay
+        width={'100%'}
+        axis="horizontal"
+        className="!w-full"
+        infiniteLoop
+        interval={2000}
       >
         {images.map((image, index) => (
-          <Carousel.Slide key={index} className="relative">
+          <div className="w-full min-h-screen relative" key={index}>
             <Image
               src={image.original}
               alt="image"
@@ -77,7 +77,7 @@ const Hero = () => {
               priority
               className="object-cover"
             />
-          </Carousel.Slide>
+          </div>
         ))}
       </Carousel>
     </div>

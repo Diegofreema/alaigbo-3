@@ -46,12 +46,10 @@ const Header = () => {
           <SideBar />
           <SignedIn>
             <div className="relative h-8 w-8 rounded-full overflow-hidden">
-              <Image
-                fill
-                src={imgUrl}
-                alt="profile-img"
-                className="object-cover"
-              />
+              <Avatar className="">
+                <AvatarImage src={imgUrl} className="object-cover" />
+                <AvatarFallback>profile image</AvatarFallback>
+              </Avatar>
             </div>
           </SignedIn>
           <SignedOut>

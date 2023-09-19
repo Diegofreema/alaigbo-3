@@ -1,6 +1,6 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-
+import ReactSelect from 'react-select';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -28,12 +28,13 @@ import { useEffect, useState } from 'react';
 import { countries } from '@/utils/file';
 import { ScrollArea } from '../ui/scroll-area';
 import axios from 'axios';
+import useCountries from '@/hooks/useCountries';
 const EventRegistration = () => {
   const [number, setNumber] = useState();
   const { user } = useUser();
   const { toast } = useToast();
   const router = useRouter();
-
+  const { getAll } = useCountries();
   useEffect(() => {
     const getUser = async () => {
       const { data } = await axios.get('/api/fetchMember');
