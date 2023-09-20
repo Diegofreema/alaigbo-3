@@ -1,5 +1,6 @@
 import './globals.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import { Inter } from 'next/font/google';
 import Provider from '@/components/Provider';
 import { Toaster } from '@/components/ui/toaster';

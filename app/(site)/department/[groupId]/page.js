@@ -17,66 +17,157 @@ import Sports from '@/components/departments/Sports';
 import Tourism from '@/components/departments/Tourism';
 import Transportation from '@/components/departments/Transportation';
 import Urban from '@/components/departments/Urban';
+import { fetchUserMember } from '@/lib/actions/user.actions';
+import { currentUser } from '@clerk/nextjs';
 import React from 'react';
 
-const Group = ({ params }) => {
+const Group = async ({ params }) => {
+  const { id } = await currentUser();
+  const member = await fetchUserMember(id);
+  const { group, memberType } = member;
   switch (params.groupId) {
     case 'education':
-      return <Education />;
+      return (
+        <Education
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'agriculture':
-      return <Agric />;
+      return (
+        <Agric params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'ict':
-      return <Ict />;
+      return (
+        <Ict params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'manufacture':
-      return <Manufacture />;
+      return (
+        <Manufacture
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'research':
-      return <Research />;
+      return (
+        <Research
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'creative':
-      return <Creative />;
+      return (
+        <Creative
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'entertainment':
-      return <Entertainment />;
+      return (
+        <Entertainment
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'sports':
-      return <Sports />;
+      return (
+        <Sports params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'transportation':
-      return <Transportation />;
+      return (
+        <Transportation
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'housing':
-      return <Housing />;
+      return (
+        <Housing
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'urban':
-      return <Urban />;
+      return (
+        <Urban params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'media':
-      return <Media />;
+      return (
+        <Media params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'healthcare':
-      return <Healthcare />;
+      return (
+        <Healthcare
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'mining':
-      return <Mining />;
+      return (
+        <Mining params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
     case 'tourism':
-      return <Tourism />;
+      return (
+        <Tourism
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'security':
-      return <Security />;
+      return (
+        <Security
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'finance':
-      return <Finance />;
+      return (
+        <Finance
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'politics':
-      return <Politics />;
+      return (
+        <Politics
+          params={params.groupId}
+          group={group}
+          memberType={memberType}
+        />
+      );
       break;
     case 'legal':
-      return <Legal />;
+      return (
+        <Legal params={params.groupId} group={group} memberType={memberType} />
+      );
       break;
 
     default:

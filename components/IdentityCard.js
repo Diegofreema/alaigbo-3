@@ -12,6 +12,8 @@ const IdentityCard = async ({
   lga,
   village,
   town,
+  placeOfBirth,
+  memberType,
 }) => {
   return (
     <div>
@@ -72,6 +74,18 @@ const IdentityCard = async ({
                   <div className="">
                     <span className="text-xs inline-block">Village</span>
                     <TextComponent fz={'sm'} text={village} fw={'bold'} />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  <div className="capitalized">
+                    <span className="text-xs whitespace-nowrap">
+                      Place of birth
+                    </span>
+                    <TextComponent fz={'sm'} text={placeOfBirth} fw={'bold'} />
+                  </div>
+                  <div className="">
+                    <span className="text-xs inline-block">Member</span>
+                    <TextComponent fz={'sm'} text={memberType} fw={'bold'} />
                   </div>
                 </div>
               </div>

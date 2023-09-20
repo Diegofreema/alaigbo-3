@@ -45,6 +45,7 @@ const MemberPage = async () => {
                 village={isMember?.village}
                 familyName={isMember?.familyName}
                 gender={isMember?.gender}
+                memberType={isMember?.memberType}
               />
             </div>
             <div className="sm:col-span-1">
