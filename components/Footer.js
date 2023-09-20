@@ -21,7 +21,7 @@ import { useToast } from './ui/use-toast';
 import axios from 'axios';
 const socialIcon = [
   {
-    link: 'https://twitter.com/AlaIgboYouth',
+    link: 'https://twitter.com/@AlaIgbo_YF',
     Icon: FaTwitter,
   },
 

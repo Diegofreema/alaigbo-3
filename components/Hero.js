@@ -36,9 +36,7 @@ const Hero = () => {
     {
       original: '/10.jpg',
     },
-    {
-      original: '/11.jpg',
-    },
+
     {
       original: '/12.jpg',
     },
@@ -70,7 +68,7 @@ const Hero = () => {
         showThumbs={false}
       >
         {images.map((image, index) => (
-          <div className="w-full min-h-screen relative" key={index}>
+          <div className="w-full h-screen relative" key={index}>
             <Image
               src={image.original}
               alt="image"
