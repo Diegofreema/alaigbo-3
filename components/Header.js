@@ -30,7 +30,7 @@ const Header = () => {
               <AvatarImage src="/logo.jpg" />
               <AvatarFallback>AYF</AvatarFallback>
             </Avatar>
-            <p className="hidden sm:flex">Alaigbo Youth Forum</p>
+            <p className="hidden sm:!flex">Alaigbo Youth Forum</p>
           </Link>
         </div>
 
