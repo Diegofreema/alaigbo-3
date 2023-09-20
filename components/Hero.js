@@ -1,7 +1,8 @@
 'use client';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-import { Carousel } from 'react-responsive-carousel';
+import Slider from 'react-slick';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -56,18 +57,21 @@ const Hero = () => {
       original: '/17.webp',
     },
   ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    autoplay: true,
+
+    arrows: true,
+    dots: false,
+  };
   return (
     <div className="h-screen w-full flex">
-      <Carousel
-        autoPlay
-        width={'100%'}
-        axis="horizontal"
-        className="!w-full"
-        infiniteLoop
-        interval={2000}
-        showThumbs={false}
-        showIndicators={false}
-      >
+      <Slider {...settings} className="!w-full">
         {images.map((image, index) => (
           <div className="w-full h-screen relative" key={index}>
             <Image
@@ -79,7 +83,7 @@ const Hero = () => {
             />
           </div>
         ))}
-      </Carousel>
+      </Slider>
     </div>
   );
 };
