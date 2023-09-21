@@ -45,10 +45,10 @@ const Header = () => {
           </div>
           <SideBar />
           <SignedIn>
-            <div className="relative h-8 w-8 rounded-full overflow-hidden">
+            <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center">
               <Avatar className="">
                 <AvatarImage src={imgUrl} className="object-cover" />
-                <AvatarFallback>profile image</AvatarFallback>
+                <AvatarFallback>Img</AvatarFallback>
               </Avatar>
             </div>
           </SignedIn>
