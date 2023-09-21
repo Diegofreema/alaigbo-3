@@ -110,7 +110,7 @@ const IdentityCard = async ({
         </CardContent>
         <CardContent className="w-full">
           <div className="text-center">
-            <p className="text-black uppercase">{`UIN: AYF ${generatePrefix()}/${memberId}`}</p>
+            <p className="text-black uppercase">{`UIN: AYF/${generatePrefix()}/${memberId}`}</p>
           </div>
         </CardContent>
       </Card>
