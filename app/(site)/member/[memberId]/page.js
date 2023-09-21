@@ -17,7 +17,7 @@ const MemberPage = async () => {
   // const utcMoment = moment.utc(isMember?.dob);
   // const date = utcMoment.tz('Africa/Lagos').format('DD/MM/YYYY');
 
-  if (!isMember.isOnboarded && !isInvestor.isOnboarded) {
+  if (!isMember?.isOnboarded && !isInvestor?.isOnboarded) {
     return redirect('/accountType');
   }
 
@@ -33,7 +33,7 @@ const MemberPage = async () => {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-10">
             <div className="sm:col-span-2">
               <IdentityCard
-                memberId={isMember?._id.toString()}
+                memberId={isMember?.memberId}
                 imgUrl={isMember?.imgUrl}
                 lastName={isMember?.lastName}
                 firstName={isMember?.firstName}

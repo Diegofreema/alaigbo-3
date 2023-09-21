@@ -24,7 +24,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { DatePickerInput } from '@mantine/dates';
 import { states } from '@/utils/file';
 import FileUpload from '../FileUpload';
-import { createMember } from '@/lib/actions/user.actions';
+import { createMember, updateMember } from '@/lib/actions/user.actions';
 import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
@@ -50,6 +50,7 @@ const UpdateProfile = ({ userData }) => {
     interests,
     bio,
     group,
+    memberId,
   } = userData;
   const { toast } = useToast();
   const [error, setError] = useState(false);
@@ -86,7 +87,7 @@ const UpdateProfile = ({ userData }) => {
     }
 
     try {
-      await createMember(
+      await updateMember(
         values.firstName,
         values.lastName,
         values.middleName,

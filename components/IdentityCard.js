@@ -15,6 +15,22 @@ const IdentityCard = async ({
   placeOfBirth,
   memberType,
 }) => {
+  let prefix = '';
+  const generatePrefix = () => {
+    if (state === 'Imo State') {
+      prefix = 'IM';
+    } else if (state === 'Anambra State') {
+      prefix = 'AN';
+    } else if (state === 'Ebonyi State') {
+      prefix = 'EB';
+    } else if (state === 'Enugu State') {
+      prefix = 'EN';
+    } else if (state === 'Abia State') {
+      prefix = 'AB';
+    }
+    return prefix;
+  };
+
   return (
     <div>
       <Card className="  bg-[#F4A273] rounded-md">
@@ -94,7 +110,7 @@ const IdentityCard = async ({
         </CardContent>
         <CardContent className="w-full">
           <div className="text-center">
-            <p className="text-black uppercase">{`UIN: AYF-${memberId}`}</p>
+            <p className="text-black uppercase">{`UIN: AYF ${generatePrefix()}/${memberId}`}</p>
           </div>
         </CardContent>
       </Card>
