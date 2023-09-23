@@ -6,7 +6,7 @@ import { GiCargoShip } from 'react-icons/gi';
 import { motion } from 'framer-motion';
 const Detail = () => {
   return (
-    <div className="min-h-screen  py-[100px] w-full  bg-[#042B04]">
+    <div className="min-h-screen  py-[100px] w-full  bg-[#219e21]">
       <div className=" grid md:grid-cols-2 grid-cols-1 gap-8  mx-auto w-[70%]">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}

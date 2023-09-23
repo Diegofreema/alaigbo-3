@@ -7,6 +7,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(response) {
   const body = await response.json();
+  const { userId } = auth();
   const {
     firstName,
     lastName,
@@ -20,7 +21,6 @@ export async function POST(response) {
     prefix,
     location,
     participants,
-    userId,
   } = body;
 
   if (!userId) {

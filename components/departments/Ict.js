@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { useToast } from '../ui/use-toast';
 
-const Ict = () => {
+const Ict = ({ params, group, memberType }) => {
   const router = useRouter();
   const { toast } = useToast();
   const [mounted, setMounted] = useState(false);

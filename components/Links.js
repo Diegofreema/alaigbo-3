@@ -8,9 +8,6 @@ const Links = () => {
   const { user, isSignedIn } = useUser();
   const router = useRouter();
   const pathName = usePathname();
-  if (!user?.id) {
-    router.push('/sign-up');
-  }
 
   const navLinks = [
     {
@@ -51,6 +48,9 @@ const Links = () => {
     title: 'EDIT PROFILE',
     link: `/update-profile`,
   };
+  const toHome = async () => {
+    router.push('/');
+  };
   return (
     <div className="menu-lg bg-[#373435] space-y-2 flex items-center flex-col justify-center h-screen absolute w-full top-0 -right-14 -translate-x-[50px] bottom-0">
       {navLinks.map((item, i) => (
@@ -61,15 +61,17 @@ const Links = () => {
       <div className="md:hidden">
         {pathName === `/member/${user?.id}` && <NavLinks item={updateData} />}
       </div>
-      <SignOutButton>
-        <div className="flex items-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
-          <LogOutIcon
-            color="white"
-            className="hover:text-orange-500 transition duration-300"
-          />
-          <p className="text-white ">Log out</p>
-        </div>
-      </SignOutButton>
+      {isSignedIn && (
+        <SignOutButton signOutCallback={toHome}>
+          <div className="flex items-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
+            <LogOutIcon
+              color="white"
+              className="hover:text-orange-500 transition duration-300"
+            />
+            <p className="text-white ">Log out</p>
+          </div>
+        </SignOutButton>
+      )}
     </div>
   );
 };

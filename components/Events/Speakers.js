@@ -3,22 +3,22 @@ import { Image } from '@mantine/core';
 import React from 'react';
 const speakers = [
   {
-    url: '/speaker.png',
+    url: '/download.png',
     name: 'Agbara-Okenze Obinna',
     job: 'Senior Cloud Administrator, AWS',
   },
   {
-    url: '/speaker-2.png',
+    url: '/download.png',
     name: 'Sarah Anookwuru',
     job: 'Senior Lead Otta Tech',
   },
   {
-    url: '/speaker.png',
+    url: '/download.png',
     name: 'Jack',
     job: 'MD Rolls & Boyce',
   },
   {
-    url: '/speaker-2.png',
+    url: '/download.png',
     name: 'Lola Ben',
     job: 'CTO and MD, Free to Code',
   },

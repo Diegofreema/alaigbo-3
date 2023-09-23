@@ -29,7 +29,7 @@ import { countries } from '@/utils/file';
 import { ScrollArea } from '../ui/scroll-area';
 import axios from 'axios';
 import useCountries from '@/hooks/useCountries';
-const EventRegistration = () => {
+const EventRegistration = ({ isBooked }) => {
   const [number, setNumber] = useState();
   const { user } = useUser();
   const { toast } = useToast();
@@ -38,7 +38,7 @@ const EventRegistration = () => {
   useEffect(() => {
     const getUser = async () => {
       const { data } = await axios.get('/api/fetchMember');
-      const isMember = data.isOnboarded;
+      const isMember = data?.isOnboarded;
 
       setNumber(isMember?.number);
       if (!isMember) {
@@ -72,6 +72,16 @@ const EventRegistration = () => {
   const onInvalid = (errors) => console.error(errors);
   const onSubmit = async (values) => {
     try {
+      if (isBooked) {
+        toast({
+          variant: 'white',
+          title: 'Already Booked',
+          description:
+            'You have Booked this event before, cannot book more than once',
+        });
+        router.push('/');
+        return;
+      }
       const response = await axios.post('/api/book', {
         ...values,
         userId: user?.id,
@@ -83,7 +93,7 @@ const EventRegistration = () => {
         description: 'You have Booked this event',
       });
       form.reset();
-      router.push('/');
+      router.push('https://summit.flashticketpro.com/');
     } catch (error) {
       console.log(error);
       toast({

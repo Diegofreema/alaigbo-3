@@ -25,11 +25,12 @@ const Group = async ({ params }) => {
   const { id } = await currentUser();
   const member = await fetchUserMember(id);
   const { group, memberType } = member;
+  console.log(group);
   switch (params.groupId) {
     case 'education':
       return (
         <Education
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -37,18 +38,18 @@ const Group = async ({ params }) => {
       break;
     case 'agriculture':
       return (
-        <Agric params={params.groupId} group={group} memberType={memberType} />
+        <Agric params={params?.groupId} group={group} memberType={memberType} />
       );
       break;
     case 'ict':
       return (
-        <Ict params={params.groupId} group={group} memberType={memberType} />
+        <Ict params={params?.groupId} group={group} memberType={memberType} />
       );
       break;
     case 'manufacture':
       return (
         <Manufacture
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -57,7 +58,7 @@ const Group = async ({ params }) => {
     case 'research':
       return (
         <Research
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -66,7 +67,7 @@ const Group = async ({ params }) => {
     case 'creative':
       return (
         <Creative
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -75,7 +76,7 @@ const Group = async ({ params }) => {
     case 'entertainment':
       return (
         <Entertainment
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -83,7 +84,11 @@ const Group = async ({ params }) => {
       break;
     case 'sports':
       return (
-        <Sports params={params.groupId} group={group} memberType={memberType} />
+        <Sports
+          params={params?.groupId}
+          group={group}
+          memberType={memberType}
+        />
       );
       break;
     case 'transportation':
