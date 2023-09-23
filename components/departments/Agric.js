@@ -176,7 +176,7 @@ const Agric = ({ params, group, memberType }) => {
             agricultural powerhouse.
           </p>
           <Link
-            href={' https://chat.whatsapp.com/IX0BLK5ZC9Q6Fuv4cHdQN7'}
+            href={' https://chat.whatsapp.com/FfOSemtIIBNLfmMkjJ0ObY'}
             target="_blank"
             className=" text-blue-500"
           >
