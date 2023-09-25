@@ -15,7 +15,7 @@ import { useToast } from '../ui/use-toast';
 import { PaystackButton } from 'react-paystack';
 import { useUser } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
-import { CheckCircle, Circle } from 'lucide-react';
+import { CheckCircle, Circle, X } from 'lucide-react';
 import { payment } from '@/lib/actions/book.actions';
 
 const DonateFormModal = () => {
@@ -118,8 +118,10 @@ const DonateFormModal = () => {
   if (!mounted) return null;
   return (
     <div>
-      <Dialog open={modal.isOpen}>
+      <Dialog open={modal.isOpen} className="">
         <DialogContent className="space-y-3 ">
+          <X className="absolute top-3 right-3" onClick={modal.onClose} />
+
           <DialogHeader
             onClick={() => {
               setAmount('250000');

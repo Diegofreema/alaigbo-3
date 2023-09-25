@@ -1,7 +1,14 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import ReactSelect from 'react-select';
 import { Button } from '@/components/ui/button';
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from '@/components/ui/command';
+
 import {
   Form,
   FormControl,
@@ -26,11 +33,14 @@ import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import { countries } from '@/utils/file';
-import { ScrollArea } from '../ui/scroll-area';
 import axios from 'axios';
 import useCountries from '@/hooks/useCountries';
 import { useDonateModal } from '@/hooks/modal';
 import DonateFormModal from './DonateFormModal';
+import { Check, ChevronsUpDown } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { cn } from '@/lib/utils';
+import { ScrollArea } from '../ui/scroll-area';
 const EventRegistration = ({ isBooked, paid }) => {
   const [number, setNumber] = useState();
   const { user } = useUser();
@@ -63,7 +73,7 @@ const EventRegistration = ({ isBooked, paid }) => {
       middleName: '',
       email: user?.emailAddresses[0].emailAddress || '',
       number: number || '',
-      location: 'Nigeria',
+      location: '',
       accommodation: 'Yes',
       participants: 'Vip',
       guest: 'No',
@@ -262,9 +272,9 @@ const EventRegistration = ({ isBooked, paid }) => {
               control={form.control}
               name="location"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flex-col">
                   <FormLabel>Location</FormLabel>
-                  <Select
+                  {/* <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
@@ -285,8 +295,57 @@ const EventRegistration = ({ isBooked, paid }) => {
                         ))}
                       </ScrollArea>
                     </SelectContent>
-                  </Select>
-
+                  </Select> */}
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <FormControl className="border border-orange-500">
+                        <Button
+                          variant="outline"
+                          role="combobox"
+                          className={cn(
+                            'w-full mt-3 justify-between',
+                            !field.value && 'text-muted-foreground'
+                          )}
+                        >
+                          {field.value
+                            ? countries.find(
+                                (country) => country.value === field.value
+                              )?.label
+                            : 'Select Country'}
+                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[100%] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search Country..." />
+                        <CommandEmpty>No Country found.</CommandEmpty>
+                        <CommandGroup>
+                          <ScrollArea className="h-[300px]">
+                            {countries.map((country) => (
+                              <CommandItem
+                                value={country.label}
+                                key={country.value}
+                                onSelect={() => {
+                                  form.setValue('location', country.value);
+                                }}
+                              >
+                                <Check
+                                  className={cn(
+                                    'mr-2 h-4 w-4',
+                                    country.value === field.value
+                                      ? 'opacity-100'
+                                      : 'opacity-0'
+                                  )}
+                                />
+                                {country.label}
+                              </CommandItem>
+                            ))}
+                          </ScrollArea>
+                        </CommandGroup>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
                   <FormMessage />
                 </FormItem>
               )}
