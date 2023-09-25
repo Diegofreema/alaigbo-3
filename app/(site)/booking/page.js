@@ -1,5 +1,5 @@
 import EventRegistration from '@/components/form/EventRegistration';
-import { alreadyBooked } from '@/lib/actions/book.actions';
+import { alreadyBooked, checkPayment } from '@/lib/actions/book.actions';
 import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 
@@ -13,6 +13,7 @@ const EventOnboard = async () => {
   const isMember = await fetchUserMember(id);
   const isInvestor = await fetchInvestor(id);
   const isBooked = await alreadyBooked();
+  const paid = await checkPayment();
 
   if (!isMember?.isOnboarded && !isInvestor?.isOnboarded) {
     return redirect('/accountType');
@@ -25,7 +26,7 @@ const EventOnboard = async () => {
       </h1>
 
       <div>
-        <EventRegistration isBooked={isBooked} />
+        <EventRegistration isBooked={isBooked} paid={paid} />
       </div>
     </div>
   );

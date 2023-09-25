@@ -29,7 +29,9 @@ import { countries } from '@/utils/file';
 import { ScrollArea } from '../ui/scroll-area';
 import axios from 'axios';
 import useCountries from '@/hooks/useCountries';
-const EventRegistration = ({ isBooked }) => {
+import { useDonateModal } from '@/hooks/modal';
+import DonateFormModal from './DonateFormModal';
+const EventRegistration = ({ isBooked, paid }) => {
   const [number, setNumber] = useState();
   const { user } = useUser();
   const { toast } = useToast();
@@ -107,8 +109,16 @@ const EventRegistration = ({ isBooked }) => {
   };
 
   const isLoading = form.formState.isSubmitting;
+  const modal = useDonateModal();
   return (
     <div className="min-h-screen mt-8">
+      <DonateFormModal />
+      <Button
+        onClick={modal.onOpen}
+        className="md:w-32 w-24 z-30 sm:right-4 text-white bottom-16 cursor-pointer bg-[#DE5000]  rounded-sm mb-4  p-2 hover:bg-[#DE5000]/75 duration-[2s] transition"
+      >
+        Pay to book a seat
+      </Button>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit, onInvalid)}
@@ -422,7 +432,7 @@ const EventRegistration = ({ isBooked }) => {
           </div>
           <div className="flex justify-center items-center">
             <Button
-              disabled={isLoading}
+              disabled={isLoading || !paid}
               className=" bg-orange-500 w-[400px]"
               type="submit"
             >

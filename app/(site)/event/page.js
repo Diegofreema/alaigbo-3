@@ -12,22 +12,12 @@ import {
   CardFooter,
   CardHeader,
 } from '@/components/ui/card';
-import { Button as Btn } from '@/components/ui/button';
-import DonateFormModal from '@/components/form/DonateFormModal';
-import { useDonateModal } from '@/hooks/modal';
 
 const Event = () => {
-  const modal = useDonateModal();
   return (
     <div className=" overflow-x-hidden relative">
       <EventNotification />
-      <Btn
-        onClick={modal.onOpen}
-        className="fixed left-2 md:w-32 w-24 z-30 sm:right-4 text-white bottom-16 cursor-pointer bg-gradient-to-tl from-[#DE5000] to-[#EE0000]  rounded-sm  p-2 animate-pulse duration-[2s] transition"
-      >
-        Donate
-      </Btn>
-      <DonateFormModal />
+
       <EventTimer />
       <Speakers />
       <div className="h-screen bg-[#131313] relative flex justify-center items-center">

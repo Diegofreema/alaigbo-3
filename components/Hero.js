@@ -8,53 +8,31 @@ import Image from 'next/image';
 const Hero = () => {
   const images = [
     {
-      original: '/1.jpg',
+      original: '/d1.jpg',
     },
     {
-      original: '/2.jpg',
+      original: '/d2.jpg',
     },
     {
-      original: '/3.jpg',
+      original: '/d3.jpg',
     },
     {
-      original: '/4.jpg',
+      original: '/d4.jpg',
     },
     {
-      original: '/5.jpeg',
+      original: '/d5.jpg',
     },
     {
-      original: '/6.jpg',
+      original: '/d6.jpg',
     },
     {
-      original: '/7.jpg',
+      original: '/d7.jpg',
     },
     {
-      original: '/8.jpg',
+      original: '/d8.jpg',
     },
     {
-      original: '/9.jpg',
-    },
-    {
-      original: '/10.jpg',
-    },
-
-    {
-      original: '/12.jpg',
-    },
-    {
-      original: '/13.jpg',
-    },
-    {
-      original: '/14.jpg',
-    },
-    {
-      original: '/15.jpeg',
-    },
-    {
-      original: '/16.jpg',
-    },
-    {
-      original: '/17.webp',
+      original: '/d9.jpg',
     },
   ];
   const settings = {
