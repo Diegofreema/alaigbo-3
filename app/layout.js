@@ -14,7 +14,7 @@ import { CrispProvider } from '@/components/CrsipProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: ' Harnessing Human Capital for Sustainable Development in Alaigbo',
+  title: ' Alaigbo Youth Forum',
   description: ` Discover how Alaigbo leverages its human capital to drive economic growth, innovation, and social progress. Explore our initiatives to develop and empower a skilled workforce. `,
 };
 
