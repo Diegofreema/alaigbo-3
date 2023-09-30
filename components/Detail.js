@@ -61,7 +61,7 @@ const Detail = () => {
               <div className="text-center sm:text-left">
                 <p>ALAIGBO IS</p>
                 <p>SURROUNDED</p>
-                <p>ARE FEW MILES TO THE</p>
+                <p>BY THE</p>
                 <p>ATLANTIC OCEAN</p>
               </div>
             </div>

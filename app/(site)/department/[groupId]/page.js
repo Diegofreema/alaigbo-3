@@ -19,6 +19,7 @@ import Transportation from '@/components/departments/Transportation';
 import Urban from '@/components/departments/Urban';
 import { fetchUserMember } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
+import { Loader } from 'lucide-react';
 import React from 'react';
 
 const Group = async ({ params }) => {
@@ -94,7 +95,7 @@ const Group = async ({ params }) => {
     case 'transportation':
       return (
         <Transportation
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -103,7 +104,7 @@ const Group = async ({ params }) => {
     case 'housing':
       return (
         <Housing
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -111,18 +112,18 @@ const Group = async ({ params }) => {
       break;
     case 'urban':
       return (
-        <Urban params={params.groupId} group={group} memberType={memberType} />
+        <Urban params={params?.groupId} group={group} memberType={memberType} />
       );
       break;
     case 'media':
       return (
-        <Media params={params.groupId} group={group} memberType={memberType} />
+        <Media params={params?.groupId} group={group} memberType={memberType} />
       );
       break;
     case 'healthcare':
       return (
         <Healthcare
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -130,13 +131,17 @@ const Group = async ({ params }) => {
       break;
     case 'mining':
       return (
-        <Mining params={params.groupId} group={group} memberType={memberType} />
+        <Mining
+          params={params?.groupId}
+          group={group}
+          memberType={memberType}
+        />
       );
       break;
     case 'tourism':
       return (
         <Tourism
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -145,7 +150,7 @@ const Group = async ({ params }) => {
     case 'security':
       return (
         <Security
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -154,7 +159,7 @@ const Group = async ({ params }) => {
     case 'finance':
       return (
         <Finance
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -163,7 +168,7 @@ const Group = async ({ params }) => {
     case 'politics':
       return (
         <Politics
-          params={params.groupId}
+          params={params?.groupId}
           group={group}
           memberType={memberType}
         />
@@ -171,12 +176,17 @@ const Group = async ({ params }) => {
       break;
     case 'legal':
       return (
-        <Legal params={params.groupId} group={group} memberType={memberType} />
+        <Legal params={params?.groupId} group={group} memberType={memberType} />
       );
       break;
 
     default:
-      return <div>Loading...</div>;
+      return (
+        <div className="flex min-h-screen items-center justify-center animate-spin">
+          {' '}
+          <Loader size="xl" />{' '}
+        </div>
+      );
       break;
   }
 };
