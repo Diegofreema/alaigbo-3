@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import TitleComponent from '../mantine/TitleComponent';
 import Link from 'next/link';
-import { useToast } from 'react-toastify';
+
 import { useRouter } from 'next/navigation';
+import { useToast } from '../ui/use-toast';
 
 const Tourism = ({ params, group, memberType }) => {
   const router = useRouter();
