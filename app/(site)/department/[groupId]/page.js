@@ -20,13 +20,18 @@ import Urban from '@/components/departments/Urban';
 import { fetchUserMember } from '@/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 import { Loader } from 'lucide-react';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const Group = async ({ params }) => {
   const { id } = await currentUser();
   const member = await fetchUserMember(id);
+  if (!member) {
+    redirect('/');
+    return;
+  }
   const { group, memberType } = member;
-  console.log(group);
+
   switch (params.groupId) {
     case 'education':
       return (
