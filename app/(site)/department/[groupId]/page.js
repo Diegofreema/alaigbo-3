@@ -27,9 +27,9 @@ const Group = async ({ params }) => {
   const { id } = await currentUser();
   const member = await fetchUserMember(id);
   if (!member) {
-    redirect('/');
-    return;
+    redirect('/accountType');
   }
+
   const { group, memberType } = member;
 
   switch (params.groupId) {

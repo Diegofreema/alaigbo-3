@@ -22,9 +22,12 @@ const AccountType = () => {
 
   if (!mounted) return null;
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="!min-h-screen flex items-center justify-center">
       <Dialog open>
         <DialogContent className="space-y-3 ">
+          <DialogTitle className="text-center">
+            You Have To Register To Continue
+          </DialogTitle>
           <DialogHeader
             onClick={() => setType('investor')}
             className={cn(
