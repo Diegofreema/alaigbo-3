@@ -46,7 +46,7 @@ const Detail = () => {
             <div className="left ">
               <div className="flex flex-col items-center ">
                 <FaRoad color="white" size={50} />
-                <div className="text-center sm:text-left">
+                <div className="text-center ">
                   <p>29,000KM LAND</p>
                   <p>MASS, 42% ARABLE</p>
                   <p>LAND FILLED WITH</p>
@@ -55,17 +55,17 @@ const Detail = () => {
               </div>
             </div>
           </div>
-          <div className="bottom flex  sm:items-start items-center flex-col gap-y-16">
+          <div className="bottom flex   items-center flex-col gap-y-16">
             <div className="flex flex-col items-center  ">
               <GiCargoShip color="white" size={50} />
-              <div className="text-center sm:text-left">
+              <div className="text-center ">
                 <p>ALAIGBO IS</p>
                 <p>SURROUNDED</p>
                 <p>BY THE</p>
                 <p>ATLANTIC OCEAN</p>
               </div>
             </div>
-            <p className="text-center sm:text-left">
+            <p className="text-center ">
               Alaigbo is bounded by River Niger on the West, Riverine Niger
               Delta on the South, Cross River on the East and neighboring
               Cameroon also and the rivers are few miles to the atlantic which
