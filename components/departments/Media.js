@@ -24,6 +24,8 @@ const Media = ({ params, group, memberType }) => {
   if (!mounted) {
     return null;
   }
+  // ! To be removed when data has been added //
+  router.push('/');
   return <div className="min-h-screen items-center justify-center"></div>;
 };
 
