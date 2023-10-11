@@ -4,7 +4,7 @@ import NavLinks from './NavLinks';
 import { SignOutButton, useUser } from '@clerk/nextjs';
 import { LogOutIcon } from 'lucide-react';
 
-const Links = () => {
+const Links = ({ isAdmin }) => {
   const { user, isSignedIn } = useUser();
   const router = useRouter();
   const pathName = usePathname();
@@ -39,6 +39,10 @@ const Links = () => {
       title: 'DEPARTMENTS',
       link: '/department',
     },
+    // {
+    //   title: 'ADMIN DASHBOARD',
+    //   link: '/admin',
+    // },
   ];
   const data = {
     title: 'DASHBOARD',

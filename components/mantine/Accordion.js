@@ -1,12 +1,12 @@
 'use client';
 import { list } from '@/dummyText';
-import { Accordion, Group, Text, Title } from '@mantine/core';
+import { Accordion, Container, Group, Text, Title } from '@mantine/core';
 
 function AccordionLabel({ label, description }) {
   return (
     <Group noWrap>
       <div>
-        <Title order={4} ta={'center'} fw={'bold'}>
+        <Title w={'100%'} order={4} ta={''} fw={'bold'}>
           {label}
         </Title>
         {description && (
@@ -16,6 +16,7 @@ function AccordionLabel({ label, description }) {
             fw={'normal'}
             color="dimmed"
             weight={400}
+            w={'100%'}
           >
             {description}
           </Text>
@@ -28,10 +29,10 @@ function AccordionLabel({ label, description }) {
 function Demo() {
   const items = list.map((item) => (
     <Accordion.Item value={item.id} key={item.label}>
-      <Accordion.Control>
-        <AccordionLabel {...item} />
+      <Accordion.Control className="!w-full" {...item}>
+        <AccordionLabel className="!w-full" {...item} />
       </Accordion.Control>
-      <Accordion.Panel>
+      <Accordion.Panel w={'100%'}>
         {item.content.map((text, i) => (
           <Text className="leading-relaxed" key={i} size="md" mb={10}>
             {text}
@@ -41,9 +42,11 @@ function Demo() {
     </Accordion.Item>
   ));
   return (
-    <Accordion chevronPosition="right" variant="filled" mt={80}>
-      {items}
-    </Accordion>
+    <Container>
+      <Accordion chevronPosition="right" variant="filled" mt={80}>
+        {items}
+      </Accordion>
+    </Container>
   );
 }
 

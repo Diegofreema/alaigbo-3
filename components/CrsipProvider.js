@@ -3,5 +3,9 @@
 import { CrispChat } from './Crisp';
 
 export const CrispProvider = () => {
-  return <CrispChat />;
+  return (
+    <div className="">
+      <CrispChat />
+    </div>
+  );
 };

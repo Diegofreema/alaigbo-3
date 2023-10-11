@@ -1,13 +1,15 @@
+'use client';
 import SemiHeader from '@/UI/SemiHeader';
 
 import Demo from '@/components/mantine/Accordion';
 import TextComponent from '@/components/mantine/TextComponent';
+import { Container } from '@mantine/core';
 
 const Abstract = () => {
   return (
     <div className="min-h-screen md:py-[80px] py-[60px]">
       <SemiHeader>ABSTRACT</SemiHeader>
-      <div className="container w-[98%] md:w-[85%] lg:w-[70%] space-y-32  mx-auto px-4">
+      <Container className=" space-y-32  mx-auto px-4">
         <Demo />
 
         <div className="mt-16 space-y-8">
@@ -30,7 +32,7 @@ const Abstract = () => {
 
           <TextComponent fw={700} text={'OUR MOTTO: Maka Oganiru Ndigbo'} />
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

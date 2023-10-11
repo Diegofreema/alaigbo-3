@@ -215,6 +215,7 @@ export const departments = [
   { value: 'Media', label: 'Media' },
   { value: 'Healthcare', label: 'Healthcare' },
   { value: 'Mining', label: 'Mining' },
+  { value: 'Legal Team', label: 'Legal Team' },
   { value: 'Tourism', label: 'Tourism' },
 ];
 

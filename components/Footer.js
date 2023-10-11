@@ -79,11 +79,13 @@ const Footer = () => {
     }
   }
   const isLoading = form.formState.isSubmitting;
+  const isAdminRoute = pathname.startsWith('/admin');
   return (
     <motion.footer
       className={cn(
-        'bg-[#0D0C0DE6] px-4 pb-6 ',
-        pathname === '/member/*' ? 'hidden' : 'block'
+        'bg-[#000] px-4 pb-6 !z-40 ',
+        pathname === '/member/*' ? 'hidden' : 'block',
+        isAdminRoute && 'md:ml-20'
       )}
     >
       <motion.div

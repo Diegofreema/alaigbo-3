@@ -15,7 +15,7 @@ const Header = () => {
   const pathName = usePathname();
 
   return (
-    <header className="   bg-black  fixed top-0 left-0 right-0 z-30 ">
+    <header className="   bg-black  fixed top-0 left-0 right-0 z-40 ">
       <nav
         className={cn(
           ' py-6   items-center justify-between w-[90%] md:w-[85%] mx-auto ',

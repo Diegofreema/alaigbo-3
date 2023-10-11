@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <ClerkProvider>
         <Provider>
           <CrispProvider />
-          <body className={cn(inter.className)}>
+          <body className={cn(inter.className, 'overflow-x-hidden')}>
             <Header />
             {children}
             <Footer />
