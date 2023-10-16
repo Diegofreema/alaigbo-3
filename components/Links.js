@@ -21,7 +21,7 @@ const Links = ({ isAdmin }) => {
     },
     {
       title: 'SUMMIT BOOKING',
-      link: '/booking',
+      link: 'https://summit.flashticketpro.com/',
     },
     {
       title: 'MEMBER REGISTRATION',
