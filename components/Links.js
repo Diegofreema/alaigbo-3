@@ -6,6 +6,8 @@ import { LogOutIcon } from 'lucide-react';
 
 const Links = ({ isAdmin }) => {
   const { user, isSignedIn } = useUser();
+
+  const admin = user?.publicMetadata?.admin || false;
   const router = useRouter();
   const pathName = usePathname();
 
@@ -44,6 +46,10 @@ const Links = ({ isAdmin }) => {
     //   link: '/admin',
     // },
   ];
+  const adminData = {
+    title: 'ADMIN DASHBOARD',
+    link: '/admin/members',
+  };
   const data = {
     title: 'DASHBOARD',
     link: `/member/${user?.id}`,
@@ -66,15 +72,18 @@ const Links = ({ isAdmin }) => {
         {pathName === `/member/${user?.id}` && <NavLinks item={updateData} />}
       </div>
       {isSignedIn && (
-        <SignOutButton signOutCallback={toHome}>
-          <div className="flex items-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
-            <LogOutIcon
-              color="white"
-              className="hover:text-orange-500 transition duration-300"
-            />
-            <p className="text-white ">Log out</p>
-          </div>
-        </SignOutButton>
+        <div>
+          {admin && <NavLinks item={adminData} />}
+          <SignOutButton signOutCallback={toHome}>
+            <div className="flex items-center justify-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
+              <LogOutIcon
+                color="white"
+                className="hover:text-orange-500 transition duration-300"
+              />
+              <p className="text-white ">Log out</p>
+            </div>
+          </SignOutButton>
+        </div>
       )}
     </div>
   );

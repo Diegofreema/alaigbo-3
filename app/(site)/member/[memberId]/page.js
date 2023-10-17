@@ -48,9 +48,6 @@ const MemberPage = async () => {
                 memberType={isMember?.memberType}
               />
             </div>
-            <div className="sm:col-span-1">
-              <EventCard />
-            </div>
           </div>
         </div>
       </div>

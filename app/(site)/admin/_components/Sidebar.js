@@ -7,20 +7,12 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 const links = [
   {
-    href: '/admin',
-    Icon: ShieldCheck,
-  },
-  {
     href: '/admin/members',
     Icon: User2,
   },
   {
     href: '/admin/events',
     Icon: CalendarRange,
-  },
-  {
-    href: '/admin/booked',
-    Icon: CalendarCheck,
   },
 ];
 const Sidebar = ({ mobile = false }) => {
@@ -39,7 +31,7 @@ const Sidebar = ({ mobile = false }) => {
           key={i}
           href={href}
           className={twMerge(
-            ' flex items-center justify-center h-18 py-2 w-full cursor-pointer !z-10 ',
+            ' flex items-center hover:!bg-white transition justify-center h-18 py-2 w-full cursor-pointer !z-10 ',
             pathname === href && ' bg-white '
           )}
         >

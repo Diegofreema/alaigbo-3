@@ -17,4 +17,7 @@ export const ourFileRouter = {
   fileImg: f({ pdf: { maxFileSize: '4MB', maxFileCount: 1 } })
     .middleware(() => handleAuth())
     .onUploadComplete(() => {}),
+  eventImg: f({ image: { maxFileSize: '4MB', maxFileCount: 1 } })
+    .middleware(() => handleAuth())
+    .onUploadComplete(() => {}),
 };

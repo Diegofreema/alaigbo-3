@@ -3,9 +3,9 @@ import Sidebar from './_components/Sidebar';
 
 const layout = ({ children }) => {
   return (
-    <div className="!overflow-x-hidden relative">
+    <div className=" relative min-h-screen">
       <Sidebar />
-      <div className="md:ml-20">{children}</div>
+      <div className="md:ml-20  overflow-y-auto">{children}</div>
       <Sidebar mobile />
     </div>
   );
