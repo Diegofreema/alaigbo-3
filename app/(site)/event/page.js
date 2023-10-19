@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/UI/Button';
+import Business from '@/components/Business';
 import EventNotification from '@/components/Events/EventNotification';
 import EventTimer from '@/components/Events/EventTimer';
 import Speakers from '@/components/Events/Speakers';
@@ -20,6 +21,7 @@ const Event = () => {
 
       <EventTimer />
       <Speakers />
+      <Business />
       <div className="h-screen bg-[#131313] relative flex justify-center items-center">
         <TitleComponent
           order={2}
