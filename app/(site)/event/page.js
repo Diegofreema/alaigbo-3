@@ -59,7 +59,10 @@ const Event = () => {
                 text={'  December 2023'}
               />
 
-              <Button href="/booking" title={'Book Your Seat'} />
+              <Button
+                href="https://summit.flashticketpro.com/"
+                title={'Book Your Seat'}
+              />
             </CardFooter>
           </Card>
 
