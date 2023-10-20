@@ -20,8 +20,8 @@ const Event = () => {
       <EventNotification />
 
       <EventTimer />
-      <Speakers />
       <Business />
+      <Speakers />
       <div className="h-screen bg-[#131313] relative flex justify-center items-center">
         <TitleComponent
           order={2}
