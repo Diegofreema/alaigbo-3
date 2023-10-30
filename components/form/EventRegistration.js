@@ -155,6 +155,7 @@ const EventRegistration = ({ isBooked, paid }) => {
                       {[
                         { value: 'Mr', label: 'Mr' },
                         { value: 'Mrs', label: 'Mrs' },
+                        { value: 'Miss', label: 'Miss' },
                       ].map((item) => (
                         <SelectItem key={item.value} value={item.value}>
                           {item.label}
