@@ -7,7 +7,7 @@ const images = [
     url: 'https://www.nanocodes.com.ng',
   },
   {
-    src: '/olu.jpg',
+    src: '/iiii.jpg',
     text: 'Voice of The East',
     url: '',
   },
@@ -21,6 +21,22 @@ const images = [
     text: 'Ruoya Nigeria',
     url: '',
   },
+  {
+    src: '/i.jpg',
+
+    url: '',
+  },
+  {
+    src: '/iii.jpg',
+
+    url: '',
+  },
+  {
+    src: '/ii.jpg',
+
+    url: '',
+  },
+
   {
     src: '/img3.jpg',
     text: 'Service Culture Academy',

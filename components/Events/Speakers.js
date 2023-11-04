@@ -3,24 +3,82 @@ import { Image } from '@mantine/core';
 import React from 'react';
 const speakers = [
   {
-    url: '/download.png',
-    name: 'Agbara-Okenze Obinna',
-    job: 'Senior Cloud Administrator, AWS',
+    url: '/p.jpg',
   },
   {
-    url: '/download.png',
-    name: 'Sarah Anookwuru',
-    job: 'Senior Lead Otta Tech',
+    url: '/p2.jpg',
   },
   {
-    url: '/download.png',
-    name: 'Jack',
-    job: 'MD Rolls & Boyce',
+    url: '/p3.jpg',
   },
   {
-    url: '/download.png',
-    name: 'Lola Ben',
-    job: 'CTO and MD, Free to Code',
+    url: '/p4.jpg',
+  },
+  {
+    url: '/p5.jpg',
+  },
+  {
+    url: '/p6.jpg',
+  },
+  {
+    url: '/Photocard6.jpg',
+  },
+  {
+    url: '/Photocard7.jpg',
+  },
+  {
+    url: '/Photocard8.jpg',
+  },
+  {
+    url: '/Photocard10.jpg',
+  },
+  {
+    url: '/Photocard11.jpg',
+  },
+  {
+    url: '/Photocard12.jpg',
+  },
+  {
+    url: '/Photocard15.jpg',
+  },
+  {
+    url: '/Photocard16.jpg',
+  },
+  {
+    url: '/Photocard17.jpg',
+  },
+  {
+    url: '/Photocard18.jpg',
+  },
+  {
+    url: '/Photocard19.jpg',
+  },
+  {
+    url: '/Photocard20.jpg',
+  },
+  {
+    url: '/Photocard21.jpg',
+  },
+  {
+    url: '/Photocard22.jpg',
+  },
+  {
+    url: '/Photocard23.jpg',
+  },
+  {
+    url: '/Photocard25.jpg',
+  },
+  {
+    url: '/Photocard26.jpg',
+  },
+  {
+    url: '/Photocard27.jpg',
+  },
+  {
+    url: '/Photocard28.jpg',
+  },
+  {
+    url: '/pi.jpg',
   },
 ];
 const Speakers = () => {
@@ -31,7 +89,7 @@ const Speakers = () => {
       </h1>
       <div className="grid items-center place-content-center lg:grid-cols-4 md:grid-cols-2 gap-4 grid-cols-1 justify-center mx-auto w-[95%] md:w-[80%]">
         {speakers.map(({ url, name, job }, i) => (
-          <div className="bg-gray-100" key={i}>
+          <div className="bg-gray-100 rounded-md overflow-hidden" key={i}>
             <Image
               src={url}
               alt="img"
