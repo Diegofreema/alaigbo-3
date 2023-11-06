@@ -58,11 +58,17 @@ const Event = () => {
                 color={''}
                 text={'  December 2023'}
               />
+              <div className="flex items-center justify-center space-x-4">
+                <Button
+                  href="https://summit.flashticketpro.com/"
+                  title={'Book Your Seat'}
+                />
 
-              <Button
-                href="https://summit.flashticketpro.com/"
-                title={'Book Your Seat'}
-              />
+                <Button
+                  href="https://youtube.com/@AlaigboYouthForum?si=J811JNewifJvwg5z"
+                  title={'Stream Event'}
+                />
+              </div>
             </CardFooter>
           </Card>
 
