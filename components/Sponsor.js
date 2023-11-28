@@ -11,11 +11,7 @@ const images = [
     text: 'Voice of The East',
     url: '',
   },
-  {
-    src: '/img1.jpg',
-    text: 'Switch Dev',
-    url: '',
-  },
+
   {
     src: '/img2.jpg',
     text: 'Ruoya Nigeria',
