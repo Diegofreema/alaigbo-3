@@ -38,6 +38,11 @@ const images = [
     text: 'Service Culture Academy',
     url: '',
   },
+  {
+    src: '/last.jpg',
+    text: 'Reliable Technology',
+    url: '',
+  },
 ];
 
 const Sponsor = () => {
