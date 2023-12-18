@@ -9,9 +9,9 @@ import {
   DialogTitle,
 } from '../../../components/ui/dialog';
 import { CheckCircle, Circle } from 'lucide-react';
-import { Button } from '../../components/ui/button';
+import { Button } from '../../../components/ui/button';
 import Link from 'next/link';
-import { cn } from '../../lib/utils';
+import { cn } from '../../../lib/utils';
 
 const AccountType = () => {
   const [mounted, setMounted] = useState(false);
@@ -22,7 +22,7 @@ const AccountType = () => {
 
   if (!mounted) return null;
   return (
-    <div className="!min-h-screen flex items-center justify-center">
+    <div className="!min-h-screen h-[100vh] flex items-center justify-center">
       <Dialog open>
         <DialogContent className="space-y-3 ">
           <DialogTitle className="text-center">

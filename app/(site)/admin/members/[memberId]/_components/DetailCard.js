@@ -1,7 +1,7 @@
 'use client';
-import DeleteModal from '@/components/DeleteModal';
-import { Button } from '@/components/ui/button';
-import { useDeleteModal } from '@/hooks/useDeleteModal';
+import DeleteModal from '../../../../../../components/DeleteModal';
+import { Button } from '../../../../../../components/ui/button';
+import { useDeleteModal } from '../../../../../../hooks/useDeleteModal';
 import Image from 'next/image';
 import React from 'react';
 
