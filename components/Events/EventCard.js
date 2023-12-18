@@ -11,7 +11,7 @@ import Image from 'next/image';
 import { format } from 'date-fns';
 import TextComponent from '../mantine/TextComponent';
 import { Button, buttonVariants } from '../ui/button';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import Link from 'next/link';
 import { booked } from '@/lib/actions/book.actions';
 

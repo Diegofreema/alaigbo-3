@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import Button from '../UI/Button';
 import { Text, Title } from '@mantine/core';
 import DemoTwo from './SecondAccordion';
-import { texts, writeUp } from '@/dummyText';
 
+import { texts, writeUp } from '../dummyText';
 const Main = () => {
   const MotionLink = motion(Link);
   return (

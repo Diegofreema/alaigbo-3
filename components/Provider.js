@@ -1,5 +1,5 @@
 'use client';
-import AuthProvider from '@/lib/AuthContext';
+import AuthProvider from '../lib/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SessionProvider } from 'next-auth/react';
 import { loadStripe } from '@stripe/stripe-js';

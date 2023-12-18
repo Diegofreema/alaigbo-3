@@ -1,5 +1,5 @@
 'use client';
-import { useDeleteModal } from '@/hooks/useDeleteModal';
+import { useDeleteModal } from '../../../../../hooks/useDeleteModal';
 import { X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React from 'react';

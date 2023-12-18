@@ -2,14 +2,14 @@ import './globals.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { Inter } from 'next/font/google';
-import Provider from '@/components/Provider';
-import { Toaster } from '@/components/ui/toaster';
+import Provider from '../components/Provider';
+import { Toaster } from '../components/ui/toaster';
 import { ClerkProvider } from '@clerk/nextjs';
 import '@uploadthing/react/styles.css';
-import { cn } from '@/lib/utils';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import { CrispProvider } from '@/components/CrsipProvider';
+import { cn } from '../lib/utils';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import { CrispProvider } from '../components/CrsipProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -1,12 +1,12 @@
 'use client';
-import { Input } from '@/components/ui/input';
+import { Input } from '../../../../components/ui/input';
 import { Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Group, Pagination } from '@mantine/core';
 import MemberComponent from '../members/_components/MemberComponent';
 import { usePagination } from '@mantine/hooks';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from '../../../../components/ui/button';
+import { cn } from '../../../../lib/utils';
 
 const itemsPerPage = 20;
 const Filter = ({ member }) => {

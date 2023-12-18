@@ -1,6 +1,14 @@
 'use client';
-import { cn } from '@/lib/utils';
-import { CalendarCheck, CalendarRange, ShieldCheck, User2 } from 'lucide-react';
+import { cn } from '../../../../lib/utils';
+import {
+  CalendarCheck,
+  CalendarRange,
+  Clapperboard,
+  Key,
+  KeyIcon,
+  ShieldCheck,
+  User2,
+} from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -13,6 +21,10 @@ const links = [
   {
     href: '/admin/events',
     Icon: CalendarRange,
+  },
+  {
+    href: '/admin/stream',
+    Icon: Clapperboard,
   },
 ];
 const Sidebar = ({ mobile = false }) => {

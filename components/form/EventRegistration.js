@@ -39,7 +39,7 @@ import { useDonateModal } from '@/hooks/modal';
 import DonateFormModal from './DonateFormModal';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { ScrollArea } from '../ui/scroll-area';
 const EventRegistration = ({ isBooked, paid }) => {
   const [number, setNumber] = useState();

@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 import SideBar from './SideBar';
 import { SignedIn, SignedOut, useUser } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 import { Button } from './ui/button';
 import Image from 'next/image';
 const Header = () => {

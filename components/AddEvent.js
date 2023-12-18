@@ -11,8 +11,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from './ui/form';
+import { Input } from './ui/input';
 import { Button } from './ui/button';
 
 import { useToast } from './ui/use-toast';
@@ -22,7 +22,7 @@ import { useEffect, useState } from 'react';
 import { DatePickerInput, TimeInput } from '@mantine/dates';
 import FileUpload from './FileUpload';
 import moment from 'moment';
-import { createEvent } from '@/lib/actions/event.action';
+import { createEvent } from '../lib/actions/event.action';
 import { Textarea } from './ui/textarea';
 
 const formSchema = z.object({

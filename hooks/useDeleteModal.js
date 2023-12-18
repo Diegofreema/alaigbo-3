@@ -1,5 +1,5 @@
-import { deleteEvent } from '@/lib/actions/event.action';
-import { deleteMember } from '@/lib/actions/user.actions';
+import { deleteEvent } from '../lib/actions/event.action';
+import { deleteMember } from '../lib/actions/user.actions';
 import { redirect } from 'next/navigation';
 import { create } from 'zustand';
 

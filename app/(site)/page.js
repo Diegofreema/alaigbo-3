@@ -1,7 +1,7 @@
-import Detail from '@/components/Detail';
-import Hero from '@/components/Hero';
-import Main from '@/components/Main';
-import Sponsor from '@/components/Sponsor';
+import Hero from '../../components/Hero';
+import Main from '../../components/Main';
+import Sponsor from '../../components/Sponsor';
+import Detail from '../../components/Detail';
 
 export default function Home() {
   return (

@@ -58,6 +58,11 @@ const Links = ({ isAdmin }) => {
     title: 'EDIT PROFILE',
     link: `/update-profile`,
   };
+
+  const streamUrl = {
+    title: 'STREAM',
+    link: '/stream',
+  };
   const toHome = async () => {
     router.push('/');
   };
@@ -72,8 +77,9 @@ const Links = ({ isAdmin }) => {
         {pathName === `/member/${user?.id}` && <NavLinks item={updateData} />}
       </div>
       {isSignedIn && (
-        <div>
+        <div className="flex flex-col items-center">
           {admin && <NavLinks item={adminData} />}
+          <NavLinks item={streamUrl} />
           <SignOutButton signOutCallback={toHome}>
             <div className="flex items-center justify-center hover:bg-orange-500 p-2 rounded-sm transition duration-300 space-x-2 cursor-pointer">
               <LogOutIcon

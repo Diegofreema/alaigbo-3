@@ -3,19 +3,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaTwitter, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { Button } from './ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from './ui/form';
+import { Input } from './ui/input';
 import { useForm } from 'react-hook-form';
 import { useToast } from './ui/use-toast';
 import axios from 'axios';

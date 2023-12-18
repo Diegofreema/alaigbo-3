@@ -1,4 +1,4 @@
-import { fetchMembers } from '@/lib/actions/user.actions';
+import { fetchMembers } from '../../../../lib/actions/user.actions';
 import Filter from '../_components/Filter';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';

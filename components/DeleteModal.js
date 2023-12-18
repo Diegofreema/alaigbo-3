@@ -7,12 +7,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from './ui/dialog';
 import { Button } from './ui/button';
 
 import { usePathname, useRouter } from 'next/navigation';
 import { useToast } from './ui/use-toast';
-import { useDeleteModal } from '@/hooks/useDeleteModal';
+import { useDeleteModal } from '../hooks/useDeleteModal';
 import { ColorRing } from 'react-loader-spinner';
 const DeleteModal = () => {
   const { isOpen, onClose, deleteEvent, id, deleteMemberFn, memberId } =

@@ -1,8 +1,8 @@
 import moment from 'moment-timezone';
-import { fetchEvent } from '@/lib/actions/event.action';
-import EventCard from '@/components/EventCard';
-import DeleteModal from '@/components/DeleteModal';
-import AddEvent from '@/components/AddEvent';
+import { fetchEvent } from '../../../../lib/actions/event.action';
+import EventCard from '../../../../components/EventCard';
+import DeleteModal from '../../../../components/DeleteModal';
+import AddEvent from '../../../../components/AddEvent';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 

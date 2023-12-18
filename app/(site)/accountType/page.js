@@ -11,7 +11,7 @@ import {
 import { CheckCircle, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const AccountType = () => {
   const [mounted, setMounted] = useState(false);

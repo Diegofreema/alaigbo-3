@@ -1,17 +1,11 @@
 'use client';
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from './ui/sheet';
 
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
 import Links from './Links';
 import { useUser } from '@clerk/nextjs';
-import { fetchUserMember } from '@/lib/actions/user.actions';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const SideBar = () => {
   const { user } = useUser();
