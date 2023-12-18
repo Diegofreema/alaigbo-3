@@ -1,5 +1,5 @@
-import Investor from '@/lib/models/Investor';
-import { connectToDB } from '@/lib/mongoose';
+import Investor from '../../../lib/models/Investor';
+import { connectToDB } from '../../../lib/mongoose';
 import { auth } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
 
