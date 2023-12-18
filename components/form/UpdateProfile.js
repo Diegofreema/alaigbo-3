@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import { Textarea } from '@/components/ui/textarea';
+import { Textarea } from '../ui/textarea';
 import { DatePickerInput } from '@mantine/dates';
 import { states } from '../../utils/file';
 import FileUpload from '../FileUpload';

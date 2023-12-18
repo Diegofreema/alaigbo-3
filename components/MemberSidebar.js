@@ -5,7 +5,7 @@ import Image from 'next/image';
 import TextComponent from './mantine/TextComponent';
 import { buttonVariants } from './ui/button';
 import Link from 'next/link';
-import { cn } from '../../lib/utils';
+import { cn } from '../lib/utils';
 
 const MemberSidebar = ({ imgUrl, department }) => {
   return (

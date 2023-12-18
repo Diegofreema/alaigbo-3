@@ -1,6 +1,6 @@
-import Book from '@/lib/models/booking';
-import User from '@/lib/models/user';
-import { connectToDB } from '@/lib/mongoose';
+import Book from '../../../lib/models/booking';
+import User from '../../../lib/models/user';
+import { connectToDB } from '../../../lib/mongoose';
 import { auth } from '@clerk/nextjs';
 
 import { NextResponse } from 'next/server';

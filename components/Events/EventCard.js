@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '../ui/card';
 import Image from 'next/image';
 
 import { format } from 'date-fns';
@@ -13,7 +13,7 @@ import TextComponent from '../mantine/TextComponent';
 import { Button, buttonVariants } from '../ui/button';
 import { cn } from '../../lib/utils';
 import Link from 'next/link';
-import { booked } from '@/lib/actions/book.actions';
+import { booked } from '../../lib/actions/book.actions';
 
 const EventCard = async () => {
   const registered = await booked();
