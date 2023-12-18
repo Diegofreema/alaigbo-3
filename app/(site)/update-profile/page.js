@@ -1,5 +1,8 @@
-import UpdateProfile from '@/components/form/UpdateProfile';
-import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
+import UpdateProfile from '../../../components/form/UpdateProfile';
+import {
+  fetchInvestor,
+  fetchUserMember,
+} from '../../../components/lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 
 const Update = async () => {

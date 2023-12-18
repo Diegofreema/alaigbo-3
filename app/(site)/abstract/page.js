@@ -1,8 +1,8 @@
 'use client';
-import SemiHeader from '@/UI/SemiHeader';
+import SemiHeader from '../../../UI/SemiHeader';
 
-import Demo from '@/components/mantine/Accordion';
-import TextComponent from '@/components/mantine/TextComponent';
+import Demo from '../../../components/mantine/Accordion';
+import TextComponent from '../../../components/mantine/TextComponent';
 import { Container } from '@mantine/core';
 
 const Abstract = () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import {
   Form,
   FormControl,
@@ -9,14 +9,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from '../ui/form';
+import { Input } from '../ui/input';
 import { useForm } from 'react-hook-form';
-import { investorValidation } from '@/lib/validations/user';
-import { Textarea } from '@/components/ui/textarea';
+import { investorValidation } from '../../lib/validations/user';
+import { Textarea } from '../ui/textarea';
 import FileUpload from '../FileUpload';
-import { createInvestor } from '@/lib/actions/user.actions';
-import { useToast } from '@/components/ui/use-toast';
+import { createInvestor } from '../../lib/actions/user.actions';
+import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import axios from 'axios';

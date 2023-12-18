@@ -1,6 +1,9 @@
-import EventRegistration from '@/components/form/EventRegistration';
-import { alreadyBooked, checkPayment } from '@/lib/actions/book.actions';
-import { fetchInvestor, fetchUserMember } from '@/lib/actions/user.actions';
+import EventRegistration from '../../../components/form/EventRegistration';
+import { alreadyBooked, checkPayment } from '../../../lib/actions/book.actions';
+import {
+  fetchInvestor,
+  fetchUserMember,
+} from '../../../lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 
 import { redirect } from 'next/navigation';

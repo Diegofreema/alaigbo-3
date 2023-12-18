@@ -1,13 +1,13 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from '@/components/ui/command';
+} from '../ui/command';
 
 import {
   Form,
@@ -16,26 +16,27 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
+} from '../ui/form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Input } from '@/components/ui/input';
+} from '../ui/select';
+import { Input } from '../ui/input';
 import { useForm } from 'react-hook-form';
-import { bookingValidation } from '@/lib/validations/user';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
+import { bookingValidation } from '../../lib/validations/user';
+
+import { Textarea } from '../ui/textarea';
+import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
-import { countries } from '@/utils/file';
+import { countries } from '../../utils/file';
 import axios from 'axios';
-import useCountries from '@/hooks/useCountries';
-import { useDonateModal } from '@/hooks/modal';
+import useCountries from '../../hooks/useCountries';
+import { useDonateModal } from '../../hooks/modal';
 import DonateFormModal from './DonateFormModal';
 import { Check, ChevronsUpDown } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';

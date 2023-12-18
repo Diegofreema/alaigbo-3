@@ -1,6 +1,6 @@
-import EventCard from '@/components/Events/EventCard';
-import MemberSidebar from '@/components/MemberSidebar';
-import { fetchInvestor } from '@/lib/actions/user.actions';
+import EventCard from '../../../../components/Events/EventCard';
+import MemberSidebar from '../../../../components/MemberSidebar';
+import { fetchInvestor } from '../../../../lib/actions/user.actions';
 import { currentUser } from '@clerk/nextjs';
 import { redirect, useRouter } from 'next/navigation';
 

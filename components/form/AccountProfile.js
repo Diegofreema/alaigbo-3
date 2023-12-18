@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import {
   Form,
   FormControl,
@@ -9,26 +9,26 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from '../ui/form';
+import { Input } from '../ui/input';
 import { useForm } from 'react-hook-form';
-import { userValidation } from '@/lib/validations/user';
+import { userValidation } from '../../lib/validations/user';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
+} from '../ui/select';
+import { Textarea } from '../ui/textarea';
 import { DatePickerInput } from '@mantine/dates';
-import { states } from '@/utils/file';
+import { states } from '../../utils/file';
 import FileUpload from '../FileUpload';
-import { createMember } from '@/lib/actions/user.actions';
-import { useToast } from '@/components/ui/use-toast';
+import { createMember } from '../../lib/actions/user.actions';
+import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
-import { departments } from '@/utils/file';
+import { departments } from '../../utils/file';
 import { useState } from 'react';
 import { ScrollArea } from '../ui/scroll-area';
 const AccountProfile = () => {

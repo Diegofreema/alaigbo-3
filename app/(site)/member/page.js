@@ -1,4 +1,4 @@
-import AccountProfile from '@/components/form/AccountProfile';
+import AccountProfile from '../../../components/form/AccountProfile';
 
 import React from 'react';
 

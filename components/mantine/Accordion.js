@@ -1,5 +1,5 @@
 'use client';
-import { list } from '@/dummyText';
+import { list } from '../../dummyText';
 import { Accordion, Container, Group, Text, Title } from '@mantine/core';
 
 function AccordionLabel({ label, description }) {

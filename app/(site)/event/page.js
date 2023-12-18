@@ -1,18 +1,18 @@
 'use client';
 
-import Button from '@/UI/Button';
-import Business from '@/components/Business';
-import EventNotification from '@/components/Events/EventNotification';
-import EventTimer from '@/components/Events/EventTimer';
-import Speakers from '@/components/Events/Speakers';
-import TextComponent from '@/components/mantine/TextComponent';
-import TitleComponent from '@/components/mantine/TitleComponent';
+import Button from '../../../UI/Button';
+import Business from '../../../components/Business';
+import EventNotification from '../../../components/Events/EventNotification';
+import EventTimer from '../../../components/Events/EventTimer';
+import Speakers from '../../../components/Events/Speakers';
+import TextComponent from '../../../components/mantine/TextComponent';
+import TitleComponent from '../../../components/mantine/TitleComponent';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from '@/components/ui/card';
+} from '../../../components/ui/card';
 
 const Event = () => {
   return (

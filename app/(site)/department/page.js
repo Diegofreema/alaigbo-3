@@ -1,5 +1,5 @@
-import SemiHeader from '@/UI/SemiHeader';
-import DepartmentCard from '@/components/mantine/DepartmentCard';
+import SemiHeader from '../../../UI/SemiHeader';
+import DepartmentCard from '../../../components/mantine/DepartmentCard';
 const departments = [
   { department: 'Education', id: 'education' },
   { department: 'Agriculture', id: 'agriculture' },

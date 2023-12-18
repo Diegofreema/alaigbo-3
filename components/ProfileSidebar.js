@@ -1,9 +1,4 @@
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from './ui/sheet';
 import Header from './Header';
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';

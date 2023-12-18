@@ -1,4 +1,4 @@
-import InvestorProfile from '@/components/form/InvestorProfile';
+import InvestorProfile from '../../../components/form/InvestorProfile';
 
 const Investor = () => {
   return (

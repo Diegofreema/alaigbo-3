@@ -10,13 +10,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from '../ui/dialog';
-import { useDonateModal } from '@/hooks/modal';
+import { useDonateModal } from '../../hooks/modal';
 import { useToast } from '../ui/use-toast';
 import { PaystackButton } from 'react-paystack';
 import { useUser } from '@clerk/nextjs';
 import { cn } from '../../lib/utils';
 import { CheckCircle, Circle, X } from 'lucide-react';
-import { payment } from '@/lib/actions/book.actions';
+import { payment } from '../..//lib/actions/book.actions';
 
 const DonateFormModal = () => {
   const [amount, setAmount] = useState('10000');
