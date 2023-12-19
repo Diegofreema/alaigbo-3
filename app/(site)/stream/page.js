@@ -1,29 +1,23 @@
-import { currentUser } from '@clerk/nextjs';
-import { getStream } from '../../../lib/actions/stream.action';
 import React from 'react';
-import StreamComponent from '../admin/stream/_component/StreamComponent';
+
+import StreamComponent from './_component/StreamComponent';
+
+import { currentUser } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
+
 const page = async () => {
-  const streams = await getStream();
-  if (!streams) {
-    return (
-      <div className="py-[100px]  w-[90%] mx-auto">
-        <StreamButton />
-        <SkeletonCom />
-      </div>
-    );
+  const { id, publicMetadata } = await currentUser();
+  const admin = publicMetadata?.admin || false;
+  if (!id && !admin) {
+    redirect('/');
   }
 
-  const singleStream = streams[0];
   return (
-    <div className="min-h-screen h-[100vh] w-full">
-      <div className="mt-10 h-full grid-cols-1 md:grid-cols-2 gap-5">
-        {<StreamComponent stream={singleStream} />}
-      </div>
+    <div className="py-[100px] min-h-screen  w-[90%] mx-auto">
+      <StreamComponent />
     </div>
   );
 };
-
-export default page;
 
 const SkeletonCom = () => {
   return (
@@ -34,3 +28,4 @@ const SkeletonCom = () => {
     </div>
   );
 };
+export default page;

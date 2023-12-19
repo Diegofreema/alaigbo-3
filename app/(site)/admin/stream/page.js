@@ -1,11 +1,12 @@
 import React from 'react';
-import StreamButton from '../../stream/_component/StreamButton';
+
 import StreamComponent from './_component/StreamComponent';
 import StreamModal from '../../../../components/form/AddStream';
 import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import { getStream } from '../../../../lib/actions/stream.action';
 import { Skeleton } from '../../../../components/ui/skeleton';
+
 const page = async () => {
   const { id, publicMetadata } = await currentUser();
   const admin = publicMetadata?.admin || false;
@@ -22,23 +23,9 @@ const page = async () => {
     );
   }
   return (
-    <>
-      <StreamModal />
-      <div className="py-[100px]  w-[90%] mx-auto">
-        <StreamButton />
-        <div className="mt-10 grid-cols-1 md:grid-cols-2 gap-5">
-          {Array.isArray(streams) && streams?.length > 0 ? (
-            streams.map((stream) => (
-              <StreamComponent key={stream?.id} stream={stream} />
-            ))
-          ) : (
-            <div>
-              <p className="text-center text-bold">No streams</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </>
+    <div className="py-[100px] min-h-screen  w-[90%] mx-auto">
+      <StreamComponent />
+    </div>
   );
 };
 

@@ -1,26 +1,25 @@
 'use client';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   useHMSStore,
   useHMSActions,
   useHMSNotifications,
   selectIsConnectedToRoom,
-  useVideo,
-  selectPeers,
+  s,
 } from '@100mslive/react-sdk';
 import { useUser } from '@clerk/nextjs';
-import { Button } from '../../../../../components/ui/button';
+import { Button } from '../../../../components/ui/button';
 import Room from './Room';
-import getToken from '../../../../../service';
+import getToken from '../../../../service';
 
 const ENDPOINT = process.env.REACT_APP_TOKEN_ENDPOINT;
 const ROOM_ID = process.env.REACT_ROOM_ID;
 const id = `${Date.now()}`;
 const StreamComponent = ({ stream }) => {
   const isConnected = useHMSStore(selectIsConnectedToRoom);
-  const [loading, setLoading] = useState(false);
   const [token, setToken] = React.useState('');
-  console.log('tokenState', token);
+  const [loading, setLoading] = useState(false);
+
   const { user } = useUser();
   // const hmsStore = useHMSStore();
   const hmsActions = useHMSActions();
@@ -54,7 +53,8 @@ const StreamComponent = ({ stream }) => {
   async function onJoinClick() {
     setLoading(true);
     try {
-      const token = await getToken('broadcaster');
+      const token = await getToken('viewer-realtime');
+      setToken(token);
 
       await hmsActions.join({
         userName: user?.fullName,
@@ -79,10 +79,14 @@ const StreamComponent = ({ stream }) => {
     <div className="">
       {!isConnected && (
         <Button disabled={loading} onClick={onJoinClick}>
-          Create stream
+          Join live stream
         </Button>
       )}
-      <Room />
+      {!isConnected ? (
+        <div className="w-full h-full bg-slate-900 rounded-md"></div>
+      ) : (
+        <Room />
+      )}
     </div>
   );
 };
